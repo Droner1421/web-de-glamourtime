@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Gestionar Citas - Glamour Time</title>
+    <link rel="stylesheet" href="src/css/admin.css">
+    <style>
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        .tabla-citas {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .tabla-citas thead {
+            background: linear-gradient(90deg, #ffd900 0%, #ffed4e 100%);
+            color: #000;
+        }
+
+        .tabla-citas th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .tabla-citas td {
+            padding: 1rem;
+            border-bottom: 1px solid #333;
+            color: #ccc;
+        }
+
+        .tabla-citas tbody tr {
+            transition: background-color 0.3s ease;
+        }
+
+        .tabla-citas tbody tr:hover {
+            background-color: #222;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .estado-pendiente {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .estado-confirmada {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .estado-cancelada {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .estado-completada {
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .btn-accion {
+            padding: 0.4rem 0.8rem;
+            margin-right: 0.3rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-ver {
+            background-color: #667eea;
+            color: white;
+        }
+
+        .btn-ver:hover {
+            background-color: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        .btn-eliminar {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .btn-eliminar:hover {
+            background-color: #da190b;
+            transform: translateY(-2px);
+        }
+
+        .seccion-filtros {
+            background: linear-gradient(135deg, #1c1c1c 0%, #1a1a1a 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .seccion-filtros h2 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #ffd900;
+            padding-bottom: 0.75rem;
+        }
+
+        .filtros-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .grupo-filtro {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .grupo-filtro label {
+            margin-bottom: 0.5rem;
+            color: #ffd900;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .grupo-filtro input,
+        .grupo-filtro select {
+            padding: 0.75rem;
+            border: 1px solid #333;
+            border-radius: 6px;
+            background-color: #222;
+            color: #fff;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .grupo-filtro input:focus,
+        .grupo-filtro select:focus {
+            outline: none;
+            border-color: #ffd900;
+            background-color: #252525;
+        }
+
+        .botones-filtros {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-filtrar,
+        .btn-limpiar {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-filtrar {
+            background-color: #667eea;
+            color: white;
+        }
+
+        .btn-filtrar:hover {
+            background-color: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        .btn-limpiar {
+            background-color: #666;
+            color: white;
+        }
+
+        .btn-limpiar:hover {
+            background-color: #555;
+            transform: translateY(-2px);
+        }
+
+        .seccion-panel {
+            background: linear-gradient(135deg, #1c1c1c 0%, #1a1a1a 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+        }
+
+        .seccion-panel h2 {
+            margin-top: 0;
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #ffd900;
+            padding-bottom: 0.75rem;
+        }
+
+        .estadisticas-citas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tarjeta-stat {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .tarjeta-stat h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .tarjeta-stat .numero {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .tabla-responsive {
+            overflow-x: auto;
+        }
+
+        @media (max-width: 768px) {
+            .tabla-citas th,
+            .tabla-citas td {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .btn-accion {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <div class="panel-lateral">
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <div class="marca-panel">Glamour Time</div>
+            <nav class="navegacion-panel">
+                <a class="elemento-nav" href="admin.html">Tablero</a>
+                <a class="elemento-nav activo" style="background-color: #ffd900;" href="admin-citas.html">Citas</a>
+                <a class="elemento-nav" href="admin-clientes.html">Clientes</a>
+                <a class="elemento-nav" href="admin-productos.html">Productos</a>
+            </nav>
+            <div class="pie-lateral">Conectado como Admin</div>
+        </div>
+
+        <div class="panel-principal">
+            <div class="barra-superior">
+                <h1 class="titulo-barra">Gestionar Citas</h1>
+                <div class="acciones-barra">
+                    <input class="buscador" placeholder="Buscar..." aria-label="Buscar">
+                    <a class="boton" href="index.html">Salir</a>
+                </div>
+            </div>
+
+            <div class="estadisticas-citas">
+                <div class="tarjeta-stat">
+                    <h3>Total de Citas</h3>
+                    <div class="numero" id="contador-citas">0</div>
+                </div>
+            </div>
+
+            <div class="seccion-filtros">
+                <h2 style="margin-top: 0;">Filtros</h2>
+                <div class="filtros-grid">
+                    <div class="grupo-filtro">
+                        <label for="filtro-fecha-desde">Fecha Desde:</label>
+                        <input type="date" id="filtro-fecha-desde">
+                    </div>
+                    <div class="grupo-filtro">
+                        <label for="filtro-fecha-hasta">Fecha Hasta:</label>
+                        <input type="date" id="filtro-fecha-hasta">
+                    </div>
+                    <div class="grupo-filtro">
+                        <label for="filtro-estado">Estado:</label>
+                        <select id="filtro-estado">
+                            <option value="">-- Todos los estados --</option>
+                            <option value="pendiente">Pendiente</option>
+                            <option value="confirmada">Confirmada</option>
+                            <option value="cancelada">Cancelada</option>
+                            <option value="completada">Completada</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="botones-filtros">
+                    <button class="btn-filtrar" id="btn-filtrar">Filtrar</button>
+                    <button class="btn-limpiar" id="btn-limpiar-filtros">Limpiar Filtros</button>
+                </div>
+            </div>
+
+            <div class="seccion-panel">
+                <h2 style="margin-top: 0;">Todas las Citas</h2>
+                
+                <div id="tabla-citas" class="tabla-responsive">
+                    <div style="text-align: center; padding: 2rem;">
+                        <p style="color: #999;">Cargando citas...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/js/admin-citas.js"></script>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.navegacion-panel');
+            nav.classList.toggle('activa');
+        }
+
+        async function verificarAdmin() {
+            try {
+                const response = await fetch('verificar-sesion.php');
+                const data = await response.json();
+                
+                if (!data.logueado || !data.es_admin) {
+                    window.location.href = 'index.html';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                window.location.href = 'index.html';
+            }
+        }
+        
+        verificarAdmin();
+    </script>
+</body>
+</html>

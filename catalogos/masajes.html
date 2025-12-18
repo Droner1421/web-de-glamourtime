@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/estilos.css">
+    <link rel="stylesheet" href="../src/css/catalogos.css">
+    <link rel="stylesheet" href="../src/css/responsive.css">
+    <link rel="stylesheet" href="../src/css/user-menu.css">
+    <title>Masajes y Relajación - Glamour Time</title>
+</head>
+<body>
+    <div class="barra_superior">
+        <div class="info-contacto">
+            <a href="tel:123-456-7890" class="contacto-item">
+                <i class="icon">📞</i>
+                <span>123-456-7890</span>
+            </a>
+            <a href="mailto:glamourtim3@gmail.com" class="contacto-item">
+                <i class="icon">📧</i>
+                <span>glamourtim3@gmail.com</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="barra_navegacion">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon">💎</div>
+                <div class="titulo">Glamour Time</div>
+            </div>
+
+            <button class="alternar-menu" onclick="alternarMenu()" onkeydown="if(event.key==='Enter') alternarMenu();" style="border: none; background: none; padding: 0; cursor: pointer;" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="enlaces-nav">
+                <a href="../conocenos.html" class="item-nav">Conocenos</a>
+                <a href="../productos.html" class="item-nav">Productos</a>
+                <a href="../servicios.html" class="item-nav">Servicios</a>
+                <a href="catalogos.html" class="item-nav">Catalogos</a>
+                <a href="../mis-citas.html" class="item-nav">Citas</a>
+                <a href="#" class="item-nav usuario abrir-auth">
+                    <img class="avatar" src="../src/img/avatar.png" alt="usuario">
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1>Masajes y Relajación</h1>
+        <p>Descubre técnicas profesionales de masaje para aliviar el estrés, mejorar la circulación y promover el bienestar físico y emocional.</p>
+    </section>
+
+    <div class="imagen-catalogo">
+        <img src="../src/img/masajes.webp" alt="Sesión de masajes terapéuticos" style="max-width: 600px;">
+    </div>
+
+    <section class="content seccion">
+        <h3>Introducción a los Masajes</h3>
+        <p>Los masajes son una terapia ancestral que combina técnicas manuales para mejorar la salud física y mental. Desde relajación profunda hasta alivio de dolores específicos, los masajes ofrecen beneficios que van más allá del placer inmediato.</p>
+
+        <h3>Tipos de Masajes Terapéuticos</h3>
+        <table>
+            <tr>
+                <th>Tipo</th>
+                <th>Técnica Principal</th>
+                <th>Beneficios</th>
+                <th>Duración</th>
+            </tr>
+            <tr>
+                <td>Sueco</td>
+                <td>Efloaje, amasado, vibración</td>
+                <td>Relajación, circulación</td>
+                <td>60-90 min</td>
+            </tr>
+            <tr>
+                <td>Profundo</td>
+                <td>Presión intensa, liberación</td>
+                <td>Contracturas, dolor crónico</td>
+                <td>60-75 min</td>
+            </tr>
+            <tr>
+                <td>Aromaterapia</td>
+                <td>Aceites esenciales, masaje suave</td>
+                <td>Relajación emocional, equilibrio</td>
+                <td>60-90 min</td>
+            </tr>
+            <tr>
+                <td>Reflexología</td>
+                <td>Puntos específicos pies/manos</td>
+                <td>Equilibrio orgánico, detox</td>
+                <td>45-60 min</td>
+            </tr>
+            <tr>
+                <td>Deportivo</td>
+                <td>Técnicas específicas deportistas</td>
+                <td>Recuperación muscular, rendimiento</td>
+                <td>60-90 min</td>
+            </tr>
+            <tr>
+                <td>Shiatsu</td>
+                <td>Presión dedos, meridianos</td>
+                <td>Equilibrio energía, relajación</td>
+                <td>60-75 min</td>
+            </tr>
+        </table>
+
+        <h3>Beneficios Científicos del Masaje</h3>
+        <ul>
+            <li><strong>Reduce cortisol:</strong> Baja niveles de estrés en un 30-50%.</li>
+            <li><strong>Mejora circulación:</strong> Aumenta flujo sanguíneo y linfático.</li>
+            <li><strong>Alivia dolor:</strong> Reduce inflamación y libera endorfinas.</li>
+            <li><strong>Fortalece sistema inmune:</strong> Aumenta células asesinas naturales.</li>
+            <li><strong>Mejora sueño:</strong> Reduce insomnio y mejora calidad del descanso.</li>
+            <li><strong>Reduce ansiedad:</strong> Baja síntomas de depresión y estrés.</li>
+            <li><strong>Mejora flexibilidad:</strong> Aumenta rango de movimiento articular.</li>
+        </ul>
+
+        <h3>Masajes por Áreas del Cuerpo</h3>
+        <table>
+            <tr>
+                <th>Área</th>
+                <th>Problemas Comunes</th>
+                <th>Tipo Recomendado</th>
+            </tr>
+            <tr>
+                <td>Cuello y hombros</td>
+                <td>Tensión, dolores de cabeza</td>
+                <td>Profundo, sueco</td>
+            </tr>
+            <tr>
+                <td>Espalda</td>
+                <td>Contracturas, hernias</td>
+                <td>Profundo, deportivo</td>
+            </tr>
+            <tr>
+                <td>Piernas</td>
+                <td>Cansancio, varices</td>
+                <td>Circulatorio, reflexología</td>
+            </tr>
+            <tr>
+                <td>Pies</td>
+                <td>Fatiga, fascitis plantar</td>
+                <td>Reflexología, sueco</td>
+            </tr>
+            <tr>
+                <td>Brazos</td>
+                <td>Tensión muscular, RSI</td>
+                <td>Sueco, aromaterapia</td>
+            </tr>
+            <tr>
+                <td>Cabeza y cuero cabelludo</td>
+                <td>Migrañas, estrés</td>
+                <td>Cabeza, aromaterapia</td>
+            </tr>
+        </table>
+
+        <h3>Preparación para una Sesión de Masaje</h3>
+        <ul>
+            <li>Llega 10-15 minutos antes para completar formularios y relajarte.</li>
+            <li>Comunica alergias, lesiones, embarazos o condiciones médicas.</li>
+            <li>Evita comidas pesadas 2 horas antes; come ligero si es necesario.</li>
+            <li>Usa ropa cómoda y fácil de quitar; el terapeuta saldrá durante.</li>
+            <li>Bebe agua después para ayudar en eliminación de toxinas.</li>
+            <li>Dúchate antes si es sesión con aceites.</li>
+        </ul>
+
+        <h3>Contraindicaciones para Masajes</h3>
+        <ul>
+            <li>Fiebre alta o infecciones activas.</li>
+            <li>Lesiones recientes, fracturas o esguinces.</li>
+            <li>Enfermedades cardíacas graves sin autorización médica.</li>
+            <li>Embarazo de alto riesgo o primer trimestre.</li>
+            <li>Problemas de coagulación o uso de anticoagulantes.</li>
+            <li>Cáncer activo o en tratamiento de quimioterapia.</li>
+            <li>Áreas con trombosis o flebitis.</li>
+        </ul>
+
+        <h3>Técnicas Básicas de Automasaje</h3>
+        <ul>
+            <li><strong>Cuello:</strong> Inclina cabeza lateralmente, masajea con dedos en círculos.</li>
+            <li><strong>Hombros:</strong> Presiona pulgares en puntos de tensión, rota hombros.</li>
+            <li><strong>Espalda:</strong> Usa pelota de tenis contra pared para puntos gatillo.</li>
+            <li><strong>Pies:</strong> Masajea planta con pulgares, rota tobillos.</li>
+            <li><strong>Manos:</strong> Estira dedos, masajea palma con pulgar opuesto.</li>
+        </ul>
+
+        <h3>Relajación en Casa</h3>
+        <table>
+            <tr>
+                <th>Técnica</th>
+                <th>Duración</th>
+                <th>Beneficio</th>
+            </tr>
+            <tr>
+                <td>Meditación</td>
+                <td>10-20 min diarios</td>
+                <td>Reduce ansiedad, mejora enfoque</td>
+            </tr>
+            <tr>
+                <td>Baño de inmersión</td>
+                <td>20-30 min</td>
+                <td>Relaja músculos, mejora sueño</td>
+            </tr>
+            <tr>
+                <td>Respiración profunda</td>
+                <td>5-10 min</td>
+                <td>Baja ritmo cardíaco, calma mente</td>
+            </tr>
+            <tr>
+                <td>Yoga suave</td>
+                <td>30-45 min</td>
+                <td>Flexibilidad, equilibrio mental</td>
+            </tr>
+            <tr>
+                <td>Música relajante</td>
+                <td>Variable</td>
+                <td>Reduce cortisol, mejora estado de ánimo</td>
+            </tr>
+        </table>
+
+        <h3>Formas de Cuidar la Relajación</h3>
+        <ul>
+            <li>Practica técnicas de respiración profunda diariamente para manejar estrés.</li>
+            <li>Incorpora meditación o mindfulness en tu rutina matutina.</li>
+            <li>Toma baños relajantes con sales Epsom y aceites esenciales.</li>
+            <li>Duerme 7-8 horas por noche en ambiente oscuro y fresco.</li>
+            <li>Programa sesiones de masaje regularmente, mínimo mensual.</li>
+            <li>Practica ejercicio moderado como caminar o yoga para liberar endorfinas.</li>
+            <li>Limita cafeína y alcohol que pueden aumentar la ansiedad.</li>
+            <li>Crea rutinas de "desconexión" antes de dormir.</li>
+        </ul>
+    </section>
+
+    <footer class="pie-pagina">
+        <div class="contenedor grid-pie">
+            <div class="columna-pie">
+                <h4>Contacto</h4>
+                <p>Tel: 123-456-7890<br>Correo: glamourtim3@gmail.com</p>
+                <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Horario</h4>
+                <p>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 15:00<br>Dom: Cerrado</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Síguenos</h4>
+                <p><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">WhatsApp</a></p>
+            </div>
+        </div>
+        <div class="contenedor">
+            <p class="copyright">© <span id="year">2025</span> Glamour Time. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../src/js/menu.js"></script>
+    <script src="../src/js/sesion.js"></script>
+    <script src="../src/js/auth-modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/estilos.css">
+    <link rel="stylesheet" href="../src/css/catalogos.css">
+    <link rel="stylesheet" href="../src/css/responsive.css">
+    <link rel="stylesheet" href="../src/css/user-menu.css">
+    <title>Consejos de Belleza General - Glamour Time</title>
+</head>
+<body>
+    <div class="barra_superior">
+        <div class="info-contacto">
+            <a href="tel:123-456-7890" class="contacto-item">
+                <i class="icon">📞</i>
+                <span>123-456-7890</span>
+            </a>
+            <a href="mailto:glamourtim3@gmail.com" class="contacto-item">
+                <i class="icon">📧</i>
+                <span>glamourtim3@gmail.com</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="barra_navegacion">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon">💎</div>
+                <div class="titulo">Glamour Time</div>
+            </div>
+
+            <button class="alternar-menu" onclick="alternarMenu()" onkeydown="if(event.key==='Enter') alternarMenu();" style="border: none; background: none; padding: 0; cursor: pointer;" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="enlaces-nav">
+                <a href="../conocenos.html" class="item-nav">Conocenos</a>
+                <a href="../productos.html" class="item-nav">Productos</a>
+                <a href="../servicios.html" class="item-nav">Servicios</a>
+                <a href="catalogos.html" class="item-nav">Catalogos</a>
+                <a href="../mis-citas.html" class="item-nav">Citas</a>
+                <a href="#" class="item-nav usuario abrir-auth">
+                    <img class="avatar" src="../src/img/avatar.png" alt="usuario">
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1>Consejos de Belleza General</h1>
+        <p>Guía completa con tips esenciales para mantener una rutina de belleza saludable, efectiva y personalizada para tu estilo de vida.</p>
+    </section>
+
+    <div class="imagen-catalogo">
+        <img src="../src/img/consejos.jpg" alt="Rutinas de belleza saludables" style="max-width: 600px;">
+    </div>
+
+    <section class="content seccion">
+        <h3>Introducción a la Belleza Integral</h3>
+        <p>La belleza va más allá de la apariencia externa; es el reflejo de una salud interna óptima. Una rutina integral combina cuidado de piel, cabello, alimentación balanceada y bienestar emocional para resultados duraderos y naturales.</p>
+
+        <h3>Rutina Diaria de Belleza Integral</h3>
+        <table>
+            <tr>
+                <th>Momento</th>
+                <th>Actividades</th>
+                <th>Beneficio Principal</th>
+            </tr>
+            <tr>
+                <td>Mañana</td>
+                <td>Limpieza suave, hidratación, protección solar, desayuno saludable</td>
+                <td>Preparación diaria, protección UV</td>
+            </tr>
+            <tr>
+                <td>Mediodía</td>
+                <td>Comida balanceada, hidratación, pausa para relajación</td>
+                <td>Mantenimiento energético, detox</td>
+            </tr>
+            <tr>
+                <td>Tarde</td>
+                <td>Cuidado capilar, manicura, ejercicio moderado</td>
+                <td>Mantenimiento estético, circulación</td>
+            </tr>
+            <tr>
+                <td>Noche</td>
+                <td>Desmaquillado, tratamientos nocturnos, sueño reparador</td>
+                <td>Regeneración celular, descanso</td>
+            </tr>
+        </table>
+
+        <h3>Cuidado de la Salud General para la Belleza</h3>
+        <ul>
+            <li><strong>Sueño reparador:</strong> 7-8 horas por noche para regeneración celular y reducción de ojeras.</li>
+            <li><strong>Hidratación interna:</strong> 2-3 litros de agua diarios para piel tersa y cabello brillante.</li>
+            <li><strong>Alimentación balanceada:</strong> Antioxidantes, proteínas, ácidos grasos para salud integral.</li>
+            <li><strong>Ejercicio regular:</strong> Mejora circulación, reduce estrés, tonifica cuerpo.</li>
+            <li><strong>Manejo del estrés:</strong> Técnicas de relajación para prevenir brotes y envejecimiento prematuro.</li>
+            <li><strong>Postura correcta:</strong> Mejora apariencia, previene dolores, favorece digestión.</li>
+        </ul>
+
+        <h3>Consejos por Grupos de Edad</h3>
+        <table>
+            <tr>
+                <th>Edad</th>
+                <th>Enfoque Principal</th>
+                <th>Cuidados Específicos</th>
+            </tr>
+            <tr>
+                <td>20-30 años</td>
+                <td>Prevención, salud</td>
+                <td>Protección solar, rutinas básicas, alimentación saludable</td>
+            </tr>
+            <tr>
+                <td>30-40 años</td>
+                <td>Mantenimiento, firmeza</td>
+                <td>Antioxidantes, hidratación intensa, primeros tratamientos anti-edad</td>
+            </tr>
+            <tr>
+                <td>40-50 años</td>
+                <td>Rejuvenecimiento</td>
+                <td>Colágeno, retinoides, tratamientos intensivos</td>
+            </tr>
+            <tr>
+                <td>50+ años</td>
+                <td>Conservación</td>
+                <td>Hidratación profunda, protección máxima, aceptación natural</td>
+            </tr>
+        </table>
+
+        <h3>Errores Comunes en Rutinas de Belleza</h3>
+        <table>
+            <tr>
+                <th>Error</th>
+                <th>Consecuencia</th>
+                <th>Solución</th>
+            </tr>
+            <tr>
+                <td>No desmaquillar</td>
+                <td>Obstrucción poros, envejecimiento prematuro</td>
+                <td>Rutina nocturna estricta, productos suaves</td>
+            </tr>
+            <tr>
+                <td>Exceso productos</td>
+                <td>Irritación, desequilibrio piel</td>
+                <td>Simplificar rutina, productos compatibles</td>
+            </tr>
+            <tr>
+                <td>No protección solar</td>
+                <td>Manchas, arrugas, fotoenvejecimiento</td>
+                <td>SPF diario, reaplicación, sombreros</td>
+            </tr>
+            <tr>
+                <td>Productos caducados</td>
+                <td>Irrritación, ineficacia, contaminación</td>
+                <td>Revisar fechas, desechar productos viejos</td>
+            </tr>
+            <tr>
+                <td>Compartir cosméticos</td>
+                <td>Infecciones, herpes, bacterias</td>
+                <td>Productos personales, higiene estricta</td>
+            </tr>
+        </table>
+
+        <h3>Consejos para Diferentes Tipos de Piel</h3>
+        <ul>
+            <li><strong>Piel seca:</strong> Evita agua caliente, usa humectantes, aceite en cutículas.</li>
+            <li><strong>Piel grasa:</strong> Limpieza frecuente, productos oil-free, exfoliación suave.</li>
+            <li><strong>Piel mixta:</strong> Productos balanceados, atención zona T, hidratación ligera.</li>
+            <li><strong>Piel sensible:</strong> Ingredientes suaves, pruebas de parche, protección máxima.</li>
+            <li><strong>Piel madura:</strong> Antioxidantes, colágeno, tratamientos regeneradores.</li>
+        </ul>
+
+        <h3>Hábitos Saludables para la Belleza</h3>
+        <table>
+            <tr>
+                <th>Hábito</th>
+                <th>Frecuencia</th>
+                <th>Beneficio Belleza</th>
+            </tr>
+            <tr>
+                <td>Ejercicio cardiovascular</td>
+                <td>3-5 veces/semana</td>
+                <td>Mejor circulación, reducción toxinas</td>
+            </tr>
+            <tr>
+                <td>Meditación</td>
+                <td>Diariamente 10 min</td>
+                <td>Reduce estrés, mejora piel</td>
+            </tr>
+            <tr>
+                <td>Dieta antiinflamatoria</td>
+                <td>Diariamente</td>
+                <td>Reduce brotes, mejora tono</td>
+            </tr>
+            <tr>
+                <td>Hidratación constante</td>
+                <td>Todo el día</td>
+                <td>Piel tersa, cabello brillante</td>
+            </tr>
+            <tr>
+                <td>Sueño reparador</td>
+                <td>7-8 horas/noche</td>
+                <td>Regeneración celular, reducción ojeras</td>
+            </tr>
+        </table>
+
+        <h3>Inversión Inteligente en Belleza</h3>
+        <ul>
+            <li>Prioriza productos básicos de calidad sobre cantidad de items.</li>
+            <li>Invierte en tratamientos profesionales preventivos.</li>
+            <li>Elige marcas con ingredientes activos comprobados.</li>
+            <li>Considera herramientas duraderas en lugar de productos desechables.</li>
+            <li>Educate sobre ingredientes y sus beneficios reales.</li>
+        </ul>
+
+        <h3>Autocuidado Emocional para la Belleza</h3>
+        <ul>
+            <li>Practica afirmaciones positivas sobre tu apariencia natural.</li>
+            <li>Celebra tu individualidad en lugar de compararte con estándares irreales.</li>
+            <li>Encuentra actividades que te hagan sentir confiada y hermosa.</li>
+            <li>Rodeate de personas que apoyen tu bienestar integral.</li>
+            <li>Recuerda que la verdadera belleza viene desde adentro.</li>
+        </ul>
+
+        <h3>Formas de Cuidar tu Belleza</h3>
+        <ul>
+            <li>Visita a profesionales regularmente para evaluaciones y tratamientos preventivos.</li>
+            <li>Elige productos según tu tipo específico de piel, cabello y necesidades.</li>
+            <li>Experimenta con nuevos looks pero siempre manteniendo tu esencia natural.</li>
+            <li>Invierte en herramientas y productos de calidad para resultados duraderos.</li>
+            <li>Educate continuamente sobre tendencias, ingredientes y técnicas nuevas.</li>
+            <li>Mantén consistencia en tus rutinas diarias para resultados acumulativos.</li>
+            <li>Escucha a tu cuerpo y ajusta rutinas según cambios estacionales o hormonales.</li>
+            <li>Combina tratamientos caseros con profesionales para mejores resultados.</li>
+        </ul>
+    </section>
+
+    <footer class="pie-pagina">
+        <div class="contenedor grid-pie">
+            <div class="columna-pie">
+                <h4>Contacto</h4>
+                <p>Tel: 123-456-7890<br>Correo: glamourtim3@gmail.com</p>
+                <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Horario</h4>
+                <p>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 15:00<br>Dom: Cerrado</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Síguenos</h4>
+                <p><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">WhatsApp</a></p>
+            </div>
+        </div>
+        <div class="contenedor">
+            <p class="copyright">© <span id="year">2025</span> Glamour Time. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../src/js/menu.js"></script>
+    <script src="../src/js/sesion.js"></script>
+    <script src="../src/js/auth-modal.js"></script>
+</body>
+</html>

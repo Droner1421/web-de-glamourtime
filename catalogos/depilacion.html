@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/estilos.css">
+    <link rel="stylesheet" href="../src/css/catalogos.css">
+    <link rel="stylesheet" href="../src/css/responsive.css">
+    <link rel="stylesheet" href="../src/css/user-menu.css">
+    <title>Depilación - Glamour Time</title>
+</head>
+<body>
+    <div class="barra_superior">
+        <div class="info-contacto">
+            <a href="tel:123-456-7890" class="contacto-item">
+                <i class="icon">📞</i>
+                <span>123-456-7890</span>
+            </a>
+            <a href="mailto:glamourtim3@gmail.com" class="contacto-item">
+                <i class="icon">📧</i>
+                <span>glamourtim3@gmail.com</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="barra_navegacion">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon">💎</div>
+                <div class="titulo">Glamour Time</div>
+            </div>
+
+            <button class="alternar-menu" onclick="alternarMenu()" onkeydown="if(event.key==='Enter') alternarMenu();" style="border: none; background: none; padding: 0; cursor: pointer;" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="enlaces-nav">
+                <a href="../conocenos.html" class="item-nav">Conocenos</a>
+                <a href="../productos.html" class="item-nav">Productos</a>
+                <a href="../servicios.html" class="item-nav">Servicios</a>
+                <a href="catalogos.html" class="item-nav">Catalogos</a>
+                <a href="../mis-citas.html" class="item-nav">Citas</a>
+                <a href="#" class="item-nav usuario abrir-auth">
+                    <img class="avatar" src="../src/img/avatar.png" alt="usuario">
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1>Depilación</h1>
+        <p>Descubre los mejores métodos de depilación para una piel suave y libre de vello, desde técnicas caseras hasta tratamientos profesionales.</p>
+    </section>
+
+    <div class="imagen-catalogo">
+        <img src="../src/img/depilacion.jpg" alt="Tratamiento de depilación" style="max-width: 600px;">
+    </div>
+
+    <section class="content seccion">
+        <h3>Introducción a la Depilación</h3>
+        <p>La depilación es un cuidado estético fundamental que mantiene la piel suave y libre de vello no deseado. Existen múltiples métodos, desde temporales hasta permanentes, cada uno con ventajas específicas según el área y tipo de piel.</p>
+
+        <h3>Tipos de Vello y Características</h3>
+        <table>
+            <tr>
+                <th>Tipo de Vello</th>
+                <th>Características</th>
+                <th>Método Recomendado</th>
+            </tr>
+            <tr>
+                <td>Láminar</td>
+                <td>Fino, suave, poco pigmentado</td>
+                <td>Cera, láser, depilación eléctrica</td>
+            </tr>
+            <tr>
+                <td>Terminal</td>
+                <td>Grueso, pigmentado, visible</td>
+                <td>Cera caliente, láser, IPL</td>
+            </tr>
+            <tr>
+                <td>Vello facial</td>
+                <td>Sensible, requiere precisión</td>
+                <td>Hilo, pinzas, láser especializado</td>
+            </tr>
+            <tr>
+                <td>Vello corporal</td>
+                <td>Áreas grandes, grueso</td>
+                <td>Cera, láser, depiladoras</td>
+            </tr>
+        </table>
+
+        <h3>Preparación para la Depilación</h3>
+        <ul>
+            <li>Exfolia la piel 24-48 horas antes para remover células muertas y facilitar extracción.</li>
+            <li>Evita exposición solar intensa antes del procedimiento para prevenir irritación.</li>
+            <li>Corta el vello a una longitud de 3-5 mm según el método elegido.</li>
+            <li>Limpia la piel con jabón neutro antes de depilar para eliminar aceites.</li>
+            <li>Hidrata bien la piel previamente para mejor tolerancia.</li>
+        </ul>
+
+        <h3>Métodos de Depilación Temporales</h3>
+        <table>
+            <tr>
+                <th>Método</th>
+                <th>Duración</th>
+                <th>Ventajas</th>
+                <th>Desventajas</th>
+            </tr>
+            <tr>
+                <td>Afeitado</td>
+                <td>1-3 días</td>
+                <td>Rápido, económico, fácil</td>
+                <td>Iritación, vello encarnado</td>
+            </tr>
+            <tr>
+                <td>Cera fría</td>
+                <td>2-4 semanas</td>
+                <td>Económica, menor dolor</td>
+                <td>Menos efectiva para vello grueso</td>
+            </tr>
+            <tr>
+                <td>Cera caliente</td>
+                <td>3-6 semanas</td>
+                <td>Muy efectiva, para todo tipo</td>
+                <td>Dolorosa, requiere profesional</td>
+            </tr>
+            <tr>
+                <td>Depiladoras eléctricas</td>
+                <td>2-4 semanas</td>
+                <td>Conveniente para casa</td>
+                <td>Dolorosa, irritación</td>
+            </tr>
+        </table>
+
+        <h3>Métodos de Depilación Permanentes</h3>
+        <ul>
+            <li><strong>Láser:</strong> Usa luz concentrada para dañar folículos. Efectivo para piel clara y vello oscuro. Requiere 6-8 sesiones.</li>
+            <li><strong>IPL (Luz Pulsada):</strong> Similar al láser pero menos intenso. Bueno para casa con dispositivos profesionales.</li>
+            <li><strong>Electrólisis:</strong> Introduce aguja en folículo y aplica corriente. Permanente pero lento y costoso.</li>
+            <li><strong>Depilación con hilo:</strong> Técnica ancestral usando hilo para extraer vello facial.</li>
+        </ul>
+
+        <h3>Cuidado Después de Depilar</h3>
+        <ul>
+            <li>Aplica aloe vera puro o gel calmante inmediatamente para reducir irritación.</li>
+            <li>Evita baños calientes, saunas y piscinas por 24-48 horas.</li>
+            <li>Usa ropa holgada de algodón para evitar roce en piel sensible.</li>
+            <li>Exfolia suavemente después de una semana para prevenir foliculitis.</li>
+            <li>Aplica cremas con calamina o pantenol para calmar la piel.</li>
+        </ul>
+
+        <h3>Problemas Comunes y Soluciones</h3>
+        <table>
+            <tr>
+                <th>Problema</th>
+                <th>Causa</th>
+                <th>Solución</th>
+            </tr>
+            <tr>
+                <td>Vello encarnado</td>
+                <td>Corte irregular, piel seca</td>
+                <td>Exfoliar, hidratar, no tocar</td>
+            </tr>
+            <tr>
+                <td>Irritación</td>
+                <td>Sensibilidad, alergia</td>
+                <td>Cremas calmantes, antihistamínicos</td>
+            </tr>
+            <tr>
+                <td>Hiperpigmentación</td>
+                <td>Exposición solar post-depilación</td>
+                <td>Protector solar alto, evitar sol</td>
+            </tr>
+            <tr>
+                <td>Infecciones</td>
+                <td>Higiene deficiente</td>
+                <td>Limpiar área, antibióticos si necesario</td>
+            </tr>
+        </table>
+
+        <h3>Depilación por Áreas del Cuerpo</h3>
+        <ul>
+            <li><strong>Facial:</strong> Hilo o pinzas para precisión. Evita cera en piel sensible.</li>
+            <li><strong>Axilas:</strong> Cera o láser. Mantén área seca para prevenir olores.</li>
+            <li><strong>Brazos y piernas:</strong> Depiladoras o cera. Hidrata bien después.</li>
+            <li><strong>Zona bikini:</strong> Profesional recomendado. Usa anestésicos si sensible.</li>
+            <li><strong>Espalda y pecho:</strong> Cera especializada. Requiere fuerza para aplicación.</li>
+        </ul>
+
+        <h3>Productos Recomendados</h3>
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th>Uso</th>
+                <th>Beneficio</th>
+            </tr>
+            <tr>
+                <td>Crema calmante</td>
+                <td>Post-depilación</td>
+                <td>Reduce irritación y picor</td>
+            </tr>
+            <tr>
+                <td>Exfoliante suave</td>
+                <td>Pre y post</td>
+                <td>Previene vello encarnado</td>
+            </tr>
+            <tr>
+                <td>Protector solar</td>
+                <td>Después de depilar</td>
+                <td>Evita manchas por sol</td>
+            </tr>
+            <tr>
+                <td>Aceite de depilación</td>
+                <td>Durante proceso</td>
+                <td>Reduce dolor y irritación</td>
+            </tr>
+            <tr>
+                <td>Cera especializada</td>
+                <td>Según área</td>
+                <td>Mayor duración y efectividad</td>
+            </tr>
+        </table>
+
+        <h3>Formas de Cuidar la Piel Post-Depilación</h3>
+        <ul>
+            <li>Hidrata diariamente con cremas sin alcohol ni fragancias.</li>
+            <li>Protege del sol con FPS alto mínimo 30 durante 2 semanas.</li>
+            <li>Come alimentos ricos en vitamina E y zinc para regeneración.</li>
+            <li>Evita depilar durante el período menstrual si eres muy sensible.</li>
+            <li>Consulta a un especialista para métodos avanzados como láser.</li>
+            <li>Mantén una rutina de exfoliación semanal suave.</li>
+            <li>Usa ropa interior de algodón para evitar irritación adicional.</li>
+        </ul>
+    </section>
+
+    <footer class="pie-pagina">
+        <div class="contenedor grid-pie">
+            <div class="columna-pie">
+                <h4>Contacto</h4>
+                <p>Tel: 123-456-7890<br>Correo: glamourtim3@gmail.com</p>
+                <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Horario</h4>
+                <p>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 15:00<br>Dom: Cerrado</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Síguenos</h4>
+                <p><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">WhatsApp</a></p>
+            </div>
+        </div>
+        <div class="contenedor">
+            <p class="copyright">© <span id="year">2025</span> Glamour Time. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../src/js/menu.js"></script>
+    <script src="../src/js/sesion.js"></script>
+    <script src="../src/js/auth-modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+/* Menú de usuario */
+.user-menu {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 250px;
+    z-index: 1000;
+}
+
+.user-menu-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.user-menu-item {
+    display: block;
+    padding: 12px 20px;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.user-menu-item:hover {
+    background-color: #f5f5f5;
+}
+
+.user-menu-item.logout {
+    color: #e74c3c;
+    border-top: 1px solid #f0f0f0;
+}
+
+.user-menu-item.logout:hover {
+    background-color: #ffe5e5;
+}

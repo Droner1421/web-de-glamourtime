@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/estilos.css">
+    <link rel="stylesheet" href="../src/css/catalogos.css">
+    <link rel="stylesheet" href="../src/css/responsive.css">
+    <link rel="stylesheet" href="../src/css/user-menu.css">
+    <title>Tratamientos Faciales - Glamour Time</title>
+</head>
+<body>
+    <div class="barra_superior">
+        <div class="info-contacto">
+            <a href="tel:123-456-7890" class="contacto-item">
+                <i class="icon">📞</i>
+                <span>123-456-7890</span>
+            </a>
+            <a href="mailto:glamourtim3@gmail.com" class="contacto-item">
+                <i class="icon">📧</i>
+                <span>glamourtim3@gmail.com</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="barra_navegacion">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon">💎</div>
+                <div class="titulo">Glamour Time</div>
+            </div>
+
+            <button class="alternar-menu" onclick="alternarMenu()" onkeydown="if(event.key==='Enter') alternarMenu();" style="border: none; background: none; padding: 0; cursor: pointer;" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="enlaces-nav">
+                <a href="../conocenos.html" class="item-nav">Conocenos</a>
+                <a href="../productos.html" class="item-nav">Productos</a>
+                <a href="../servicios.html" class="item-nav">Servicios</a>
+                <a href="catalogos.html" class="item-nav">Catalogos</a>
+                <a href="../mis-citas.html" class="item-nav">Citas</a>
+                <a href="#" class="item-nav usuario abrir-auth">
+                    <img class="avatar" src="../src/img/avatar.png" alt="usuario">
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1>Tratamientos Faciales</h1>
+        <p>Descubre tratamientos faciales profesionales para rejuvenecer, hidratar y mantener una piel saludable y radiante en cualquier edad.</p>
+    </section>
+
+    <div class="imagen-catalogo">
+        <img src="../src/img/Faciales.jpg" alt="Tratamiento facial profesional" style="max-width: 600px;">
+    </div>
+
+    <section class="content seccion">
+        <h3>Introducción a los Tratamientos Faciales</h3>
+        <p>Los tratamientos faciales son sesiones especializadas que utilizan técnicas profesionales para mejorar la apariencia y salud de la piel. Van desde limpiezas profundas hasta tratamientos anti-edad avanzados, adaptados a las necesidades específicas de cada tipo de piel.</p>
+
+        <h3>Tipos de Tratamientos Faciales</h3>
+        <table>
+            <tr>
+                <th>Tipo</th>
+                <th>Objetivo</th>
+                <th>Duración</th>
+                <th>Frecuencia</th>
+            </tr>
+            <tr>
+                <td>Hidratante</td>
+                <td>Restaurar humedad, piel seca</td>
+                <td>60-90 min</td>
+                <td>Mensual</td>
+            </tr>
+            <tr>
+                <td>Antiedad</td>
+                <td>Reducir arrugas, firmeza</td>
+                <td>75-120 min</td>
+                <td>Quincenal</td>
+            </tr>
+            <tr>
+                <td>Acné</td>
+                <td>Controlar brotes, desinflamar</td>
+                <td>60-90 min</td>
+                <td>Semanal</td>
+            </tr>
+            <tr>
+                <td>Iluminador</td>
+                <td>Mejorar tono, glow natural</td>
+                <td>60-75 min</td>
+                <td>Mensual</td>
+            </tr>
+            <tr>
+                <td>Desintoxicante</td>
+                <td>Eliminar impurezas, poros</td>
+                <td>75-90 min</td>
+                <td>Quincenal</td>
+            </tr>
+            <tr>
+                <td>Limpieza profunda</td>
+                <td>Remover células muertas</td>
+                <td>45-60 min</td>
+                <td>Mensual</td>
+            </tr>
+        </table>
+
+        <h3>Pasos de un Tratamiento Facial Profesional</h3>
+        <ul>
+            <li><strong>Consulta inicial:</strong> Evaluación de piel, historia médica, objetivos personales.</li>
+            <li><strong>Limpieza profunda:</strong> Remoción de maquillaje, impurezas con vapor y productos específicos.</li>
+            <li><strong>Exfoliación:</strong> Eliminación de células muertas con ácidos suaves o enzimas.</li>
+            <li><strong>Extracción:</strong> Remoción de puntos negros y espinillas (si aplica).</li>
+            <li><strong>Masaje facial:</strong> Estimulación circulatoria con técnicas relajantes.</li>
+            <li><strong>Máscaras:</strong> Tratamiento concentrado según necesidad (hidratante, anti-edad, etc.).</li>
+            <li><strong>Tratamientos específicos:</strong> Sérums, LED, microcorrientes según protocolo.</li>
+            <li><strong>Hidratación final:</strong> Aplicación de crema y protector solar.</li>
+        </ul>
+
+        <h3>Tratamientos Faciales por Edad</h3>
+        <table>
+            <tr>
+                <th>Rango de Edad</th>
+                <th>Preocupaciones Principales</th>
+                <th>Tratamientos Recomendados</th>
+            </tr>
+            <tr>
+                <td>20-30 años</td>
+                <td>Acné, poros dilatados, hidratación</td>
+                <td>Limpiezas, tratamientos anti-acné</td>
+            </tr>
+            <tr>
+                <td>30-40 años</td>
+                <td>Líneas finas, pérdida de firmeza</td>
+                <td>Antiedad preventivo, hidratación intensa</td>
+            </tr>
+            <tr>
+                <td>40-50 años</td>
+                <td>Arrugas, manchas, flacidez</td>
+                <td>Rejuvenecimiento, colágeno, peeling</td>
+            </tr>
+            <tr>
+                <td>50+ años</td>
+                <td>Envejecimiento avanzado</td>
+                <td>Anti-edad intensivo, nutrición profunda</td>
+            </tr>
+        </table>
+
+        <h3>Preparación para un Facial</h3>
+        <ul>
+            <li>Limpia la piel a fondo antes de la sesión para mejores resultados.</li>
+            <li>Evita exfoliantes fuertes o tratamientos agresivos 48 horas antes.</li>
+            <li>No uses maquillaje el día del tratamiento para evaluación precisa.</li>
+            <li>Hidrata bien la piel previamente para mejor tolerancia.</li>
+            <li>Comunica alergias, medicamentos o condiciones médicas.</li>
+            <li>Llega 10 minutos antes para relajarte y completar formularios.</li>
+        </ul>
+
+        <h3>Cuidado Post-Facial</h3>
+        <ul>
+            <li>Aplica protector solar SPF 50+ inmediatamente y durante 48 horas.</li>
+            <li>Evita exposición solar directa por 24-48 horas para prevenir manchas.</li>
+            <li>Usa productos suaves para limpiar la piel los primeros días.</li>
+            <li>Hidrata intensamente con cremas recomendadas por el especialista.</li>
+            <li>Evita saunas, baños calientes y ejercicio intenso por 24 horas.</li>
+            <li>No uses productos nuevos o exfoliantes por 3-5 días.</li>
+        </ul>
+
+        <h3>Tratamientos Faciales en Casa vs Profesionales</h3>
+        <table>
+            <tr>
+                <th>Aspecto</th>
+                <th>Casa</th>
+                <th>Profesional</th>
+            </tr>
+            <tr>
+                <td>Costo</td>
+                <td>Bajo</td>
+                <td>Alto</td>
+            </tr>
+            <tr>
+                <td>Seguridad</td>
+                <td>Riesgo si no sabes</td>
+                <td>Controlado</td>
+            </tr>
+            <tr>
+                <td>Resultados</td>
+                <td>Superficiales</td>
+                <td>Profundos, duraderos</td>
+            </tr>
+            <tr>
+                <td>Tiempo</td>
+                <td>Flexible</td>
+                <td>Estructurado</td>
+            </tr>
+            <tr>
+                <td>Productos</td>
+                <td>Limitados</td>
+                <td>Profesionales, concentrados</td>
+            </tr>
+        </table>
+
+        <h3>Contraindicaciones para Tratamientos Faciales</h3>
+        <ul>
+            <li>Embarazo o lactancia (consultar especialista).</li>
+            <li>Herpes activo o infecciones cutáneas.</li>
+            <li>Alergias a componentes específicos.</li>
+            <li>Toma de medicamentos fotosensibles.</li>
+            <li>Cirugías recientes en zona facial.</li>
+            <li>Condiciones autoinmunes activas.</li>
+        </ul>
+
+        <h3>Productos para Mantenimiento en Casa</h3>
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th>Función</th>
+                <th>Frecuencia</th>
+            </tr>
+            <tr>
+                <td>Limpiador suave</td>
+                <td>Remover impurezas</td>
+                <td>Mañana y noche</td>
+            </tr>
+            <tr>
+                <td>Tónico</td>
+                <td>Equilibrar pH</td>
+                <td>Después de limpiar</td>
+            </tr>
+            <tr>
+                <td>Sérum</td>
+                <td>Tratamiento concentrado</td>
+                <td>Mañana/noche</td>
+            </tr>
+            <tr>
+                <td>Crema hidratante</td>
+                <td>Restaurar humedad</td>
+                <td>Mañana y noche</td>
+            </tr>
+            <tr>
+                <td>Protector solar</td>
+                <td>Proteger UV</td>
+                <td>Diariamente</td>
+            </tr>
+        </table>
+
+        <h3>Formas de Cuidar la Piel Facial</h3>
+        <ul>
+            <li>Realiza rutinas diarias consistentes de limpieza, tonificación e hidratación.</li>
+            <li>Exfolia 2-3 veces por semana con productos suaves para tu tipo de piel.</li>
+            <li>Come alimentos ricos en colágeno como frutas cítricas, verduras y proteínas.</li>
+            <li>Duerme 7-8 horas por noche para permitir la regeneración celular natural.</li>
+            <li>Visita a un especialista cada 4-6 semanas para tratamientos profesionales.</li>
+            <li>Maneja el estrés con técnicas de relajación para evitar brotes.</li>
+            <li>Protege siempre la piel del sol con FPS adecuado.</li>
+            <li>Hidrata desde dentro bebiendo suficiente agua diariamente.</li>
+        </ul>
+    </section>
+
+    <footer class="pie-pagina">
+        <div class="contenedor grid-pie">
+            <div class="columna-pie">
+                <h4>Contacto</h4>
+                <p>Tel: 123-456-7890<br>Correo: glamourtim3@gmail.com</p>
+                <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Horario</h4>
+                <p>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 15:00<br>Dom: Cerrado</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Síguenos</h4>
+                <p><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">WhatsApp</a></p>
+            </div>
+        </div>
+        <div class="contenedor">
+            <p class="copyright">© <span id="year">2025</span> Glamour Time. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../src/js/menu.js"></script>
+    <script src="../src/js/sesion.js"></script>
+    <script src="../src/js/auth-modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/estilos.css">
+    <link rel="stylesheet" href="../src/css/catalogos.css">
+    <link rel="stylesheet" href="../src/css/responsive.css">
+    <link rel="stylesheet" href="../src/css/user-menu.css">
+    <title>Cuidado del Cabello - Glamour Time</title>
+</head>
+<body>
+    <div class="barra_superior">
+        <div class="info-contacto">
+            <a href="tel:123-456-7890" class="contacto-item">
+                <i class="icon">📞</i>
+                <span>123-456-7890</span>
+            </a>
+            <a href="mailto:glamourtim3@gmail.com" class="contacto-item">
+                <i class="icon">📧</i>
+                <span>glamourtim3@gmail.com</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="barra_navegacion">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon">💎</div>
+                <div class="titulo">Glamour Time</div>
+            </div>
+
+            <button class="alternar-menu" onclick="alternarMenu()" onkeydown="if(event.key==='Enter') alternarMenu();" style="border: none; background: none; padding: 0; cursor: pointer;" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="enlaces-nav">
+                <a href="../conocenos.html" class="item-nav">Conocenos</a>
+                <a href="../productos.html" class="item-nav">Productos</a>
+                <a href="../servicios.html" class="item-nav">Servicios</a>
+                <a href="catalogos.html" class="item-nav">Catalogos</a>
+                <a href="../mis-citas.html" class="item-nav">Citas</a>
+                <a href="#" class="item-nav usuario abrir-auth">
+                    <img class="avatar" src="../src/img/avatar.png" alt="usuario">
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1>Cuidado del Cabello</h1>
+        <p>Descubre cómo mantener tu cabello saludable, brillante y fuerte con nuestros consejos profesionales. Aprende sobre tipos de cabello, rutinas diarias, tratamientos y más.</p>
+    </section>
+
+    <div class="imagen-catalogo">
+        <img src="../src/img/Corte.jpg" alt="Cabello saludable y brillante" style="max-width: 600px;">
+    </div>
+
+    <section class="content seccion">
+        <h3>Introducción al Cuidado del Cabello</h3>
+        <p>El cabello es una parte fundamental de nuestra imagen personal. Un cabello saludable no solo luce mejor, sino que refleja nuestro estado general de salud. En esta guía, encontrarás información completa sobre cómo cuidar diferentes tipos de cabello, solucionar problemas comunes y mantener una melena radiante.</p>
+
+        <h3>Tipos de Cabello</h3>
+        <ul>
+            <li><strong>Normal:</strong> Equilibrado, ni demasiado seco ni graso. Requiere cuidado básico.</li>
+            <li><strong>Seco:</strong> Falta de humedad, se ve opaco y quebradizo. Necesita hidratación intensa.</li>
+            <li><strong>Graso:</strong> Produce exceso de sebo, se ve pesado y sin volumen. Requiere limpieza frecuente.</li>
+            <li><strong>Mezclado:</strong> Seco en las puntas, graso en las raíces. Necesita tratamientos específicos.</li>
+            <li><strong>Daño químico:</strong> Por tintes, decoloraciones. Requiere reparación profunda.</li>
+            <li><strong>Encrespado:</strong> Textura natural rizada o afro. Necesita hidratación y definición.</li>
+        </ul>
+
+        <h3>Rutina Diaria de Cuidado</h3>
+        <ul>
+            <li>Lava tu cabello con agua tibia, no caliente, para no dañar la cutícula.</li>
+            <li>Usa champú y acondicionador adecuados para tu tipo de cabello.</li>
+            <li>Aplica leave-in conditioner para protección adicional.</li>
+            <li>Cepilla con cuidado usando peines de dientes anchos.</li>
+            <li>Protege del sol y el calor con productos específicos.</li>
+            <li>Duerme con cabello trenzado o en coleta alta para reducir fricción.</li>
+        </ul>
+
+        <h3>Rutina Semanal de Cuidado</h3>
+        <ul>
+            <li>Aplica mascarillas nutritivas profundas 1-2 veces por semana.</li>
+            <li>Exfolia el cuero cabelludo suavemente para remover residuos.</li>
+            <li>Usa tratamientos de aceite caliente para nutrición intensa.</li>
+            <li>Corta las puntas cada 6-8 semanas para eliminar daño.</li>
+            <li>Masajea el cuero cabelludo para estimular el crecimiento.</li>
+        </ul>
+
+        <h3>Consejos para Cabello Seco</h3>
+        <ul>
+            <li>Hidrata profundamente con aceites naturales como argán, jojoba o coco.</li>
+            <li>Evita lavados frecuentes; espacia cada 3-4 días si es posible.</li>
+            <li>Usa dry shampoo entre lavados para refrescar sin dañar.</li>
+            <li>Aplica tratamientos de aceite antes del lavado (pre-poo).</li>
+            <li>Usa almohadas de seda para reducir fricción nocturna.</li>
+            <li>Incluye aceites en tu dieta: nueces, semillas, pescado.</li>
+        </ul>
+
+        <h3>Consejos para Cabello Graso</h3>
+        <ul>
+            <li>Lava con champú suave específico para cabello graso.</li>
+            <li>Evita acondicionadores pesados; usa solo en puntas si es necesario.</li>
+            <li>Masajea el cuero cabelludo para estimular la circulación.</li>
+            <li>Usa productos mate para controlar el brillo excesivo.</li>
+            <li>Limita el uso de productos estilizantes que obstruyan folículos.</li>
+            <li>Come alimentos bajos en grasas procesadas y azúcares.</li>
+        </ul>
+
+        <h3>Problemas Comunes y Soluciones</h3>
+        <table>
+            <tr>
+                <th>Problema</th>
+                <th>Causa</th>
+                <th>Solución</th>
+            </tr>
+            <tr>
+                <td>Puntas abiertas</td>
+                <td>Daño por calor, químicos, fricción</td>
+                <td>Corte regular, tratamientos de queratina, protección térmica</td>
+            </tr>
+            <tr>
+                <td>Caspa</td>
+                <td>Cuero cabelludo seco o infección por hongos</td>
+                <td>Champús anticaspa, aceite de árbol de té, dieta balanceada</td>
+            </tr>
+            <tr>
+                <td>Caída del cabello</td>
+                <td>Estrés, deficiencias nutricionales, hormonas</td>
+                <td>Suplementos de biotina, reducción de estrés, masajes capilares</td>
+            </tr>
+            <tr>
+                <td>Cabello opaco</td>
+                <td>Falta de hidratación, daño ambiental</td>
+                <td>Mascarillas hidratantes, protección solar, aceites nutritivos</td>
+            </tr>
+            <tr>
+                <td>Encrespamiento</td>
+                <td>Humedad, fricción, productos inadecuados</td>
+                <td>Hidratación intensa, peines de dientes anchos, productos sin sulfatos</td>
+            </tr>
+        </table>
+
+        <h3>Tratamientos Profesionales Recomendados</h3>
+        <ul>
+            <li><strong>Keratina:</strong> Alisa y fortalece el cabello dañado.</li>
+            <li><strong>Botox capilar:</strong> Repara profundamente la fibra capilar.</li>
+            <li><strong>Nutrición profunda:</strong> Tratamientos con aceites y proteínas.</li>
+            <li><strong>Cauterización:</strong> Sella las cutículas para mayor brillo.</li>
+            <li><strong>Masajes capilares:</strong> Mejora la circulación y reduce el estrés.</li>
+        </ul>
+
+        <h3>Alimentación para un Cabello Saludable</h3>
+        <ul>
+            <li>Proteínas: Carne, pescado, huevos, legumbres para crecimiento.</li>
+            <li>Vitaminas A, E, C: Frutas, verduras para salud del cuero cabelludo.</li>
+            <li>Omega-3: Pescado, nueces para hidratación natural.</li>
+            <li>Hierro y zinc: Espinacas, semillas para prevenir caída.</li>
+            <li>Biotina: Nueces, plátanos para fortaleza capilar.</li>
+        </ul>
+
+        <h3>Formas de Cuidar el Cabello</h3>
+        <ul>
+            <li>Corta las puntas regularmente para eliminar daño acumulado.</li>
+            <li>Evita el uso excesivo de herramientas calientes (secador, plancha).</li>
+            <li>Come una dieta rica en proteínas, vitaminas y minerales.</li>
+            <li>Bebe suficiente agua para mantener la hidratación interna.</li>
+            <li>Duerme lo suficiente para permitir la reparación natural.</li>
+            <li>Usa sombreros o productos con SPF para protección solar.</li>
+            <li>Evita el estrés excesivo que puede causar caída temporal.</li>
+            <li>Elige productos naturales cuando sea posible.</li>
+        </ul>
+
+        <h3>Productos Recomendados</h3>
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th>Uso</th>
+                <th>Beneficio</th>
+            </tr>
+            <tr>
+                <td>Champú sin sulfatos</td>
+                <td>Limpieza diaria</td>
+                <td>Menos daño químico, más hidratación</td>
+            </tr>
+            <tr>
+                <td>Acondicionador leave-in</td>
+                <td>Después del lavado</td>
+                <td>Protección y desenredo fácil</td>
+            </tr>
+            <tr>
+                <td>Aceite de argán</td>
+                <td>Puntas y tratamiento</td>
+                <td>Hidratación profunda y brillo</td>
+            </tr>
+            <tr>
+                <td>Mascarilla semanal</td>
+                <td>1-2 veces por semana</td>
+                <td>Nutrición intensiva</td>
+            </tr>
+            <tr>
+                <td>Protector térmico</td>
+                <td>Antes de calor</td>
+                <td>Previene daño por herramientas</td>
+            </tr>
+        </table>
+    </section>
+
+    <footer class="pie-pagina">
+        <div class="contenedor grid-pie">
+            <div class="columna-pie">
+                <h4>Contacto</h4>
+                <p>Tel: 123-456-7890<br>Correo: glamourtim3@gmail.com</p>
+                <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Horario</h4>
+                <p>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 15:00<br>Dom: Cerrado</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Síguenos</h4>
+                <p><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">WhatsApp</a></p>
+            </div>
+        </div>
+        <div class="contenedor">
+            <p class="copyright">© <span id="year">2025</span> Glamour Time. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../src/js/menu.js"></script>
+    <script src="../src/js/sesion.js"></script>
+    <script src="../src/js/auth-modal.js"></script>
+</body>
+</html>

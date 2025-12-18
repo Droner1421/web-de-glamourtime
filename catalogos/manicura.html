@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/estilos.css">
+    <link rel="stylesheet" href="../src/css/catalogos.css">
+    <link rel="stylesheet" href="../src/css/responsive.css">
+    <link rel="stylesheet" href="../src/css/user-menu.css">
+    <title>Manicura y Pedicura - Glamour Time</title>
+</head>
+<body>
+    <div class="barra_superior">
+        <div class="info-contacto">
+            <a href="tel:123-456-7890" class="contacto-item">
+                <i class="icon">📞</i>
+                <span>123-456-7890</span>
+            </a>
+            <a href="mailto:glamourtim3@gmail.com" class="contacto-item">
+                <i class="icon">📧</i>
+                <span>glamourtim3@gmail.com</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="barra_navegacion">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon">💎</div>
+                <div class="titulo">Glamour Time</div>
+            </div>
+
+            <button class="alternar-menu" onclick="alternarMenu()" onkeydown="if(event.key==='Enter') alternarMenu();" style="border: none; background: none; padding: 0; cursor: pointer;" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="enlaces-nav">
+                <a href="../conocenos.html" class="item-nav">Conocenos</a>
+                <a href="../productos.html" class="item-nav">Productos</a>
+                <a href="../servicios.html" class="item-nav">Servicios</a>
+                <a href="catalogos.html" class="item-nav">Catalogos</a>
+                <a href="../mis-citas.html" class="item-nav">Citas</a>
+                <a href="#" class="item-nav usuario abrir-auth">
+                    <img class="avatar" src="../src/img/avatar.png" alt="usuario">
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1>Manicura y Pedicura</h1>
+        <p>Descubre técnicas profesionales para mantener tus uñas perfectas, desde rutinas caseras hasta tratamientos avanzados.</p>
+    </section>
+
+    <div class="imagen-catalogo">
+        <img src="../src/img/Manicura.jpg" alt="Manicura profesional" style="max-width: 600px;">
+    </div>
+
+    <section class="content seccion">
+        <h3>Introducción a la Manicura y Pedicura</h3>
+        <p>La manicura y pedicura no son solo tratamientos estéticos, sino cuidados esenciales para la salud de tus uñas y piel. Una buena rutina previene infecciones, fortalece las uñas y mantiene manos y pies suaves.</p>
+
+        <h3>Anatomía de las Uñas</h3>
+        <table>
+            <tr>
+                <th>Parte</th>
+                <th>Función</th>
+                <th>Cuidados</th>
+            </tr>
+            <tr>
+                <td>Placa ungueal</td>
+                <td>Protege el lecho ungueal</td>
+                <td>Limado suave, evitar cortes agresivos</td>
+            </tr>
+            <tr>
+                <td>Lecho ungueal</td>
+                <td>Base de crecimiento</td>
+                <td>Mantener limpio, nutrir con aceites</td>
+            </tr>
+            <tr>
+                <td>Matriz</td>
+                <td>Produce la queratina</td>
+                <td>Proteger de traumatismos</td>
+            </tr>
+            <tr>
+                <td>Cutículas</td>
+                <td>Sellan la placa</td>
+                <td>No cortar, hidratar regularmente</td>
+            </tr>
+            <tr>
+                <td>Lúnula</td>
+                <td>Zona de crecimiento activa</td>
+                <td>Indicador de salud circulatoria</td>
+            </tr>
+        </table>
+
+        <h3>Rutina Diaria de Cuidado</h3>
+        <ul>
+            <li>Mantén las uñas limpias y secas para prevenir infecciones por hongos.</li>
+            <li>Corta las uñas rectas y lima en una sola dirección para evitar roturas.</li>
+            <li>Aplica aceite nutritivo (argán, jojoba) en cutículas diariamente.</li>
+            <li>Usa guantes para tareas domésticas y productos químicos.</li>
+            <li>Evita morderte las uñas; usa esmaltes fortalecedores si es necesario.</li>
+            <li>Hidrata manos y pies con cremas especializadas.</li>
+        </ul>
+
+        <h3>Tipos de Manicura</h3>
+        <table>
+            <tr>
+                <th>Tipo</th>
+                <th>Características</th>
+                <th>Duración</th>
+            </tr>
+            <tr>
+                <td>Francesa</td>
+                <td>Clásica, elegante, punta blanca</td>
+                <td>2-3 semanas</td>
+            </tr>
+            <tr>
+                <td>Americana</td>
+                <td>Colores vibrantes, diseños creativos</td>
+                <td>1-2 semanas</td>
+            </tr>
+            <tr>
+                <td>Rusa</td>
+                <td>Base negra, diseños artísticos</td>
+                <td>2-4 semanas</td>
+            </tr>
+            <tr>
+                <td>Semipermanente</td>
+                <td>Sin UV, más suave para uñas</td>
+                <td>2-3 semanas</td>
+            </tr>
+            <tr>
+                <td>SPA</td>
+                <td>Relajante, con masajes y tratamientos</td>
+                <td>2-3 semanas</td>
+            </tr>
+        </table>
+
+        <h3>Manicura Profesional Paso a Paso</h3>
+        <ul>
+            <li><strong>Preparación:</strong> Remoja las manos en agua tibia con jabón neutro por 5-10 minutos.</li>
+            <li><strong>Cutículas:</strong> Empuja suavemente con palito de naranjo, no cortes.</li>
+            <li><strong>Limado:</strong> Forma deseada (cuadrada, ovalada, almendra) con lima de vidrio o cristal.</li>
+            <li><strong>Base:</strong> Aplica capa delgada para proteger la uña natural.</li>
+            <li><strong>Color:</strong> 2 capas finas, deja secar entre capas.</li>
+            <li><strong>Top coat:</strong> Acabado brillante o mate para durabilidad.</li>
+            <li><strong>Masaje:</strong> Hidrata con crema y masajea para mejorar circulación.</li>
+        </ul>
+
+        <h3>Pedicura Profesional</h3>
+        <ul>
+            <li><strong>Remojo:</strong> Pies en agua tibia con sales Epsom por 10-15 minutos.</li>
+            <li><strong>Exfoliación:</strong> Elimina durezas con piedra pómez o lima eléctrica.</li>
+            <li><strong>Cutículas:</strong> Trata igual que en manicura, sin cortar.</li>
+            <li><strong>Limado:</strong> Uñas rectas para prevenir encarnadas.</li>
+            <li><strong>Tratamiento:</strong> Aplica tratamientos para uñas débiles o hongos.</li>
+            <li><strong>Esmalte:</strong> Usa productos resistentes al agua y desgaste.</li>
+            <li><strong>Masaje:</strong> Completo de pies con aceites esenciales.</li>
+        </ul>
+
+        <h3>Problemas Comunes en Uñas</h3>
+        <table>
+            <tr>
+                <th>Problema</th>
+                <th>Causas</th>
+                <th>Soluciones</th>
+            </tr>
+            <tr>
+                <td>Uñas quebradizas</td>
+                <td>Deshidratación, deficiencias nutricionales</td>
+                <td>Biotina, aceites nutritivos, guantes protectores</td>
+            </tr>
+            <tr>
+                <td>Uñas encarnadas</td>
+                <td>Corte incorrecto, zapatos apretados</td>
+                <td>Corte recto, zapatos cómodos, tratamiento médico</td>
+            </tr>
+            <tr>
+                <td>Hongos</td>
+                <td>Humedad, falta de higiene</td>
+                <td>Antifúngicos, mantener seco, higiene estricta</td>
+            </tr>
+            <tr>
+                <td>Leuconiquia</td>
+                <td>Traumatismos, deficiencias</td>
+                <td>Protección, suplementos, tiempo de crecimiento</td>
+            </tr>
+            <tr>
+                <td>Cutículas agrietadas</td>
+                <td>Deshidratación, químicos</td>
+                <td>Aceites diarios, guantes, hidratación</td>
+            </tr>
+        </table>
+
+        <h3>Nutrición para Uñas Saludables</h3>
+        <ul>
+            <li><strong>Biotina:</strong> Huevos, nueces, semillas para fortaleza.</li>
+            <li><strong>Proteínas:</strong> Carne, pescado, legumbres para crecimiento.</li>
+            <li><strong>Vitamina A:</strong> Zanahorias, espinacas para salud cuticular.</li>
+            <li><strong>Calcio:</strong> Lácteos, verduras de hoja para dureza.</li>
+            <li><strong>Hierro:</strong> Carnes rojas, lentejas para prevenir fragilidad.</li>
+        </ul>
+
+        <h3>Productos Esenciales</h3>
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th>Uso</th>
+                <th>Beneficio</th>
+            </tr>
+            <tr>
+                <td>Aceite para cutículas</td>
+                <td>Aplicación diaria</td>
+                <td>Hidrata y previene agrietamiento</td>
+            </tr>
+            <tr>
+                <td>Lima de cristal</td>
+                <td>Limado semanal</td>
+                <td>Menos daño que metal</td>
+            </tr>
+            <tr>
+                <td>Base fortalecedora</td>
+                <td>Bajo esmalte</td>
+                <td>Protege y fortalece uñas naturales</td>
+            </tr>
+            <tr>
+                <td>Top coat</td>
+                <td>Capa final</td>
+                <td>Brillo duradero, protección</td>
+            </tr>
+            <tr>
+                <td>Removedor sin acetona</td>
+                <td>Limpieza de esmalte</td>
+                <td>Menos daño a las uñas</td>
+            </tr>
+        </table>
+
+        <h3>Formas de Cuidar las Uñas</h3>
+        <ul>
+            <li>Come alimentos ricos en biotina y proteínas para crecimiento saludable.</li>
+            <li>Bebe suficiente agua para mantener la hidratación natural.</li>
+            <li>Evita esmaltes de baja calidad que contengan químicos dañinos.</li>
+            <li>Usa removedor de esmalte sin acetona para no resecar.</li>
+            <li>Visita al especialista cada 2-3 semanas para mantenimiento profesional.</li>
+            <li>Protege las uñas de traumatismos y exposición excesiva al agua.</li>
+            <li>Descansa las uñas sin esmalte periódicamente para regeneración.</li>
+            <li>Masajea regularmente para mejorar la circulación.</li>
+        </ul>
+    </section>
+
+    <footer class="pie-pagina">
+        <div class="contenedor grid-pie">
+            <div class="columna-pie">
+                <h4>Contacto</h4>
+                <p>Tel: 123-456-7890<br>Correo: glamourtim3@gmail.com</p>
+                <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Horario</h4>
+                <p>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 15:00<br>Dom: Cerrado</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Síguenos</h4>
+                <p><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">WhatsApp</a></p>
+            </div>
+        </div>
+        <div class="contenedor">
+            <p class="copyright">© <span id="year">2025</span> Glamour Time. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../src/js/menu.js"></script>
+    <script src="../src/js/sesion.js"></script>
+    <script src="../src/js/auth-modal.js"></script>
+</body>
+</html>

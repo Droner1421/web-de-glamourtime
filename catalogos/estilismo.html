@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/estilos.css">
+    <link rel="stylesheet" href="../src/css/catalogos.css">
+    <link rel="stylesheet" href="../src/css/responsive.css">
+    <link rel="stylesheet" href="../src/css/user-menu.css">
+    <title>Estilismo y Cortes - Glamour Time</title>
+</head>
+<body>
+    <div class="barra_superior">
+        <div class="info-contacto">
+            <a href="tel:123-456-7890" class="contacto-item">
+                <i class="icon">📞</i>
+                <span>123-456-7890</span>
+            </a>
+            <a href="mailto:glamourtim3@gmail.com" class="contacto-item">
+                <i class="icon">📧</i>
+                <span>glamourtim3@gmail.com</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="barra_navegacion">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon">💎</div>
+                <div class="titulo">Glamour Time</div>
+            </div>
+
+            <button class="alternar-menu" onclick="alternarMenu()" onkeydown="if(event.key==='Enter') alternarMenu();" style="border: none; background: none; padding: 0; cursor: pointer;" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="enlaces-nav">
+                <a href="../conocenos.html" class="item-nav">Conocenos</a>
+                <a href="../productos.html" class="item-nav">Productos</a>
+                <a href="../servicios.html" class="item-nav">Servicios</a>
+                <a href="catalogos.html" class="item-nav">Catalogos</a>
+                <a href="../mis-citas.html" class="item-nav">Citas</a>
+                <a href="#" class="item-nav usuario abrir-auth">
+                    <img class="avatar" src="../src/img/avatar.png" alt="usuario">
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1>Estilismo y Cortes</h1>
+        <p>Aprende sobre cortes de cabello modernos, técnicas de estilismo profesional y cómo mantener estilos elegantes en tu día a día.</p>
+    </section>
+
+    <div class="imagen-catalogo">
+        <img src="../src/img/Corte.jpg" alt="Cortes de cabello profesionales" style="max-width: 600px;">
+    </div>
+
+    <section class="content seccion">
+        <h3>Introducción al Estilismo</h3>
+        <p>El estilismo va más allá de los cortes; incluye técnicas de peinado, conocimiento de formas faciales y tendencias actuales. Un buen estilista considera no solo la moda, sino también la comodidad y mantenimiento del estilo elegido.</p>
+
+        <h3>Formas de Rostro y Cortes Recomendados</h3>
+        <table>
+            <tr>
+                <th>Forma de Rostro</th>
+                <th>Características</th>
+                <th>Cortes Recomendados</th>
+            </tr>
+            <tr>
+                <td>Ovalado</td>
+                <td>Armonioso, equilibrado</td>
+                <td>Cualquier corte, capas suaves</td>
+            </tr>
+            <tr>
+                <td>Redondo</td>
+                <td>Ancho, mejillas llenas</td>
+                <td>Cortes con altura, capas largas</td>
+            </tr>
+            <tr>
+                <td>Cuadrado</td>
+                <td>Mandíbula definida, ancho</td>
+                <td>Cortes suaves, ondas, capas</td>
+            </tr>
+            <tr>
+                <td>Corazón</td>
+                <td>Frente ancha, barbilla puntiaguda</td>
+                <td>Cortes cortos, flequillos suaves</td>
+            </tr>
+            <tr>
+                <td>Oblongo</td>
+                <td>Largo, estrecho</td>
+                <td>Cortes con volumen, capas</td>
+            </tr>
+            <tr>
+                <td>Triangular</td>
+                <td>Frente estrecha, mandíbula ancha</td>
+                <td>Cortes cortos, capas asimétricas</td>
+            </tr>
+        </table>
+
+        <h3>Cortes Populares por Longitud</h3>
+        <table>
+            <tr>
+                <th>Corte</th>
+                <th>Longitud</th>
+                <th>Características</th>
+                <th>Mantenimiento</th>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>Hombros</td>
+                <td>Versátil, moderno, fácil peinado</td>
+                <td>Cada 6-8 semanas</td>
+            </tr>
+            <tr>
+                <td>Lob</td>
+                <td>Cuello</td>
+                <td>Corto pero femenino, movimiento</td>
+                <td>Cada 4-6 semanas</td>
+            </tr>
+            <tr>
+                <td>Pixie</td>
+                <td>Muy corto</td>
+                <td>Audaz, bajo mantenimiento</td>
+                <td>Cada 3-4 semanas</td>
+            </tr>
+            <tr>
+                <td>Media melena</td>
+                <td>Hombros-pecho</td>
+                <td>Equilibrado, versátil</td>
+                <td>Cada 6-8 semanas</td>
+            </tr>
+            <tr>
+                <td>Largo capas</td>
+                <td>Por debajo hombros</td>
+                <td>Dimensión, movimiento natural</td>
+                <td>Cada 8-10 semanas</td>
+            </tr>
+            <tr>
+                <td>Asimétrico</td>
+                <td>Variable</td>
+                <td>Moderno, dramático</td>
+                <td>Cada 4-6 semanas</td>
+            </tr>
+        </table>
+
+        <h3>Técnicas de Corte Profesionales</h3>
+        <ul>
+            <li><strong>Corte en capas:</strong> Añade dimensión y movimiento, facilita el peinado.</li>
+            <li><strong>Degradado:</strong> Crea textura moderna, reduce volumen si necesario.</li>
+            <li><strong>Corte recto:</strong> Líneas limpias, elegante y fácil mantenimiento.</li>
+            <li><strong>Puntiagudo:</strong> Elimina puntas abiertas, crea definición.</li>
+            <li><strong>Contorneado:</strong> Define cuello y orejas, acabado profesional.</li>
+            <li><strong>Texturizado:</strong> Añade movimiento sin cambiar longitud.</li>
+            <li><strong>Corte en punto:</strong> Crea suavidad y naturalidad.</li>
+        </ul>
+
+        <h3>Estilismo Diario por Tipo de Cabello</h3>
+        <table>
+            <tr>
+                <th>Tipo de Cabello</th>
+                <th>Productos Recomendados</th>
+                <th>Técnicas</th>
+            </tr>
+            <tr>
+                <td>Liso</td>
+                <td>Sérum, spray fijador</td>
+                <td>Cepillo redondo, secador</td>
+            </tr>
+            <tr>
+                <td>Ondulado</td>
+                <td>Crema para ondas, mousse</td>
+                <td>Secado natural, difusor</td>
+            </tr>
+            <tr>
+                <td>Rizado</td>
+                <td>Gel, crema rizos</td>
+                <td>Palmas, productos sin sulfatos</td>
+            </tr>
+            <tr>
+                <td>Grueso</td>
+                <td>Champú volumizador, spray</td>
+                <td>Cepillos grandes, capas</td>
+            </tr>
+            <tr>
+                <td>Fino</td>
+                <td>Mousse, spray texturizador</td>
+                <td>Secado hacia arriba, capas</td>
+            </tr>
+            <tr>
+                <td>Daño químico</td>
+                <td>Mascarillas reparadoras, aceite</td>
+                <td>Técnicas suaves, calor protector</td>
+            </tr>
+        </table>
+
+        <h3>Rutinas de Estilismo Semanal</h3>
+        <ul>
+            <li>Lava el cabello 2-3 veces por semana para mantener salud.</li>
+            <li>Aplica tratamientos profundos una vez por semana.</li>
+            <li>Practica diferentes peinados para variar tu look.</li>
+            <li>Limpia las herramientas de peinado regularmente.</li>
+            <li>Revisa el crecimiento y planifica retoques.</li>
+        </ul>
+
+        <h3>Tendencias de Estilismo Actuales</h3>
+        <ul>
+            <li><strong>Mullet moderno:</strong> Corto adelante y arriba, largo atrás.</li>
+            <li><strong>Cortes bob ondulados:</strong> Movimiento natural y versátil.</li>
+            <li><strong>Pixie con textura:</strong> Cortes cortos con dimensión.</li>
+            <li><strong>Largos con capas:</strong> Movimiento y profundidad.</li>
+            <li><strong>Cortes asimétricos:</strong> Modernos y únicos.</li>
+            <li><strong>Flequillos cara:</strong> Diversos largos y estilos.</li>
+        </ul>
+
+        <h3>Productos para Estilismo</h3>
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th>Función</th>
+                <th>Cuándo Usar</th>
+            </tr>
+            <tr>
+                <td>Champú seco</td>
+                <td>Refrescar sin lavar</td>
+                <td>Días sin lavado completo</td>
+            </tr>
+            <tr>
+                <td>Protector térmico</td>
+                <td>Proteger del calor</td>
+                <td>Antes de herramientas calientes</td>
+            </tr>
+            <tr>
+                <td>Sérum para puntas</td>
+                <td>Controlar frizz</td>
+                <td>Cabello seco o dañado</td>
+            </tr>
+            <tr>
+                <td>Mousse</td>
+                <td>Añadir volumen</td>
+                <td>Cabello fino, ondas</td>
+            </tr>
+            <tr>
+                <td>Gel</td>
+                <td>Definir rizos</td>
+                <td>Cabello rizado, texturas</td>
+            </tr>
+            <tr>
+                <td>Spray fijador</td>
+                <td>Mantener estilo</td>
+                <td>Finalizar peinado</td>
+            </tr>
+        </table>
+
+        <h3>Peinados para Ocasiones Especiales</h3>
+        <ul>
+            <li><strong>Trabajo formal:</strong> Recogidos elegantes, cortes limpios.</li>
+            <li><strong>Eventos nocturnos:</strong> Ondas suaves, updos sofisticados.</li>
+            <li><strong>Bodas:</strong> Peinados elaborados, semi-recogidos.</li>
+            <li><strong>Verano:</strong> Peinados frescos, colas altas.</li>
+            <li><strong>Deportivo:</strong> Prácticos, recogidos cómodos.</li>
+        </ul>
+
+        <h3>Cuidado del Estilo y Mantenimiento</h3>
+        <ul>
+            <li>Corta las puntas cada 6-8 semanas para mantener salud.</li>
+            <li>Elige cortes que complementen tu forma de rostro y estilo de vida.</li>
+            <li>Mantén un régimen de cuidado capilar consistente.</li>
+            <li>Experimenta con accesorios para variar tus looks diarios.</li>
+            <li>Consulta a un estilista profesional para cambios drásticos.</li>
+            <li>Aprende técnicas básicas de peinado para emergencias.</li>
+            <li>Invierte en herramientas de calidad para mejores resultados.</li>
+        </ul>
+
+        <h3>Errores Comunes en Estilismo</h3>
+        <ul>
+            <li>Cortar cabello cuando estás estresada o indecisa.</li>
+            <li>No considerar mantenimiento del corte elegido.</li>
+            <li>Usar productos equivocados para tu tipo de cabello.</li>
+            <li>No proteger el cabello del calor excesivo.</li>
+            <li>Ignorar la forma de rostro al elegir corte.</li>
+        </ul>
+    </section>
+
+    <footer class="pie-pagina">
+        <div class="contenedor grid-pie">
+            <div class="columna-pie">
+                <h4>Contacto</h4>
+                <p>Tel: 123-456-7890<br>Correo: glamourtim3@gmail.com</p>
+                <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Horario</h4>
+                <p>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 15:00<br>Dom: Cerrado</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Síguenos</h4>
+                <p><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">WhatsApp</a></p>
+            </div>
+        </div>
+        <div class="contenedor">
+            <p class="copyright">© <span id="year">2025</span> Glamour Time. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../src/js/menu.js"></script>
+    <script src="../src/js/sesion.js"></script>
+    <script src="../src/js/auth-modal.js"></script>
+</body>
+</html>

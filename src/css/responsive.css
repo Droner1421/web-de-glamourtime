@@ -1,0 +1,193 @@
+@media screen and (max-width: 1200px) {
+    .contenedor {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .texto-principal h2 {
+        font-size: 3.2rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .barra_navegacion {
+        padding: 10px 20px;
+    }
+
+    .enlaces-nav {
+        gap: 30px;
+    }
+
+    .titulo {
+        font-size: 1.8rem;
+    }
+
+    .nosotros-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .imagen-nosotros {
+        height: 400px;
+    }
+
+    .campo.doble {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-servicios {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .barra_superior {
+        padding: 5px 15px;
+        flex-direction: row;
+        gap: 5px;
+        height: 35px;
+    }
+
+    .info-contacto {
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+        font-size: 0.8rem;
+    }
+
+    .info-contacto .icon {
+        font-size: 0.9rem;
+    }
+
+    .contacto-item span {
+        font-size: 0.8rem;
+    }
+
+    .barra_navegacion {
+        padding: 8px 15px;
+        height: 50px;
+    }
+
+    .nav-container {
+        flex-direction: row;
+        gap: 10px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-container {
+        gap: 8px;
+    }
+
+    .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .titulo {
+        font-size: 1.3rem;
+    }
+
+    .enlaces-nav {
+        position: absolute;
+        top: 85px;
+        left: 0;
+        right: 0;
+        background: #ffd900;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        text-align: center;
+        display: none;
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .enlaces-nav.active {
+        display: flex;
+    }
+
+    .imagen-principal {
+        height: 70vh;
+    }
+
+    .texto-principal h2 {
+        font-size: 2.5rem;
+    }
+
+    .botones {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .estadisticas {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .form-cita {
+        padding: 20px;
+    }
+
+    .resenas-slider {
+        padding: 10px;
+    }
+
+    .resena-card {
+        flex: 0 0 300px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .texto-principal h2 {
+        font-size: 2rem;
+    }
+
+    .descripcion-principal {
+        font-size: 1rem;
+    }
+
+    .titulo-seccion {
+        font-size: 24px;
+    }
+
+    .grid-pie {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .form-cita label {
+        font-size: 0.9rem;
+    }
+
+    .form-cita input,
+    .form-cita select,
+    .form-cita textarea {
+        padding: 12px;
+    }
+
+    .boton {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.alternar-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.alternar-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: #1a1a1a;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .alternar-menu {
+        display: flex;
+    }
+}

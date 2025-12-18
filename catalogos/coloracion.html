@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/estilos.css">
+    <link rel="stylesheet" href="../src/css/catalogos.css">
+    <link rel="stylesheet" href="../src/css/responsive.css">
+    <link rel="stylesheet" href="../src/css/user-menu.css">
+    <title>Coloración del Cabello - Glamour Time</title>
+</head>
+<body>
+    <div class="barra_superior">
+        <div class="info-contacto">
+            <a href="tel:123-456-7890" class="contacto-item">
+                <i class="icon">📞</i>
+                <span>123-456-7890</span>
+            </a>
+            <a href="mailto:glamourtim3@gmail.com" class="contacto-item">
+                <i class="icon">📧</i>
+                <span>glamourtim3@gmail.com</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="barra_navegacion">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon">💎</div>
+                <div class="titulo">Glamour Time</div>
+            </div>
+
+            <button class="alternar-menu" onclick="alternarMenu()" onkeydown="if(event.key==='Enter') alternarMenu();" style="border: none; background: none; padding: 0; cursor: pointer;" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="enlaces-nav">
+                <a href="../conocenos.html" class="item-nav">Conocenos</a>
+                <a href="../productos.html" class="item-nav">Productos</a>
+                <a href="../servicios.html" class="item-nav">Servicios</a>
+                <a href="catalogos.html" class="item-nav">Catalogos</a>
+                <a href="../mis-citas.html" class="item-nav">Citas</a>
+                <a href="#" class="item-nav usuario abrir-auth">
+                    <img class="avatar" src="../src/img/avatar.png" alt="usuario">
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1>Coloración del Cabello</h1>
+        <p>Descubre técnicas profesionales de coloración, desde tintes permanentes hasta mechas, con consejos para mantener el color vibrante y saludable.</p>
+    </section>
+
+    <div class="imagen-catalogo">
+        <img src="../src/img/Tintes.jpeg" alt="Coloración profesional de cabello" style="max-width: 600px;">
+    </div>
+
+    <section class="content seccion">
+        <h3>Introducción a la Coloración</h3>
+        <p>La coloración del cabello es un arte que combina química, técnica y creatividad. Desde cubrir canas hasta crear looks dramáticos, elegir el método correcto y cuidarlo adecuadamente es esencial para mantener un cabello saludable y color vibrante.</p>
+
+        <h3>Tipos de Coloración por Duración</h3>
+        <table>
+            <tr>
+                <th>Tipo</th>
+                <th>Duración</th>
+                <th>Cobertura</th>
+                <th>Daño</th>
+            </tr>
+            <tr>
+                <td>Permanente</td>
+                <td>4-6 semanas</td>
+                <td>Completa canas</td>
+                <td>Moderado-alto</td>
+            </tr>
+            <tr>
+                <td>Semipermanente</td>
+                <td>4-12 semanas</td>
+                <td>Parcial canas</td>
+                <td>Bajo</td>
+            </tr>
+            <tr>
+                <td>Temporal</td>
+                <td>1-2 semanas</td>
+                <td>Sin cobertura</td>
+                <td>Mínimo</td>
+            </tr>
+            <tr>
+                <td>Mechas tradicionales</td>
+                <td>6-8 semanas</td>
+                <td>Efecto dimensional</td>
+                <td>Moderado</td>
+            </tr>
+            <tr>
+                <td>Balayage</td>
+                <td>8-12 semanas</td>
+                <td>Efecto natural</td>
+                <td>Moderado</td>
+            </tr>
+            <tr>
+                <td>Ombré</td>
+                <td>8-12 semanas</td>
+                <td>Degradado</td>
+                <td>Moderado</td>
+            </tr>
+        </table>
+
+        <h3>Tonos y Elección por Tipo de Piel</h3>
+        <table>
+            <tr>
+                <th>Tono de Piel</th>
+                <th>Tonos Recomendados</th>
+                <th>Tonos a Evitar</th>
+            </tr>
+            <tr>
+                <td>Pálida</td>
+                <td>Dorados, miel, chocolate claro</td>
+                <td>Negros intensos, platinos</td>
+            </tr>
+            <tr>
+                <td>Media clara</td>
+                <td>Caramelos, castaños, rubios</td>
+                <td>Ash muy frío, negro azabache</td>
+            </tr>
+            <tr>
+                <td>Media oscura</td>
+                <td>Castaños oscuros, borgoñas</td>
+                <td>Rubios muy claros, rojizos</td>
+            </tr>
+            <tr>
+                <td>Oliva</td>
+                <td>Dorados cálidos, mieles</td>
+                <td>Ash fríos, amarillos</td>
+            </tr>
+            <tr>
+                <td>Cálida</td>
+                <td>Rojizos, cobrizos, dorados</td>
+                <td>Ash muy fríos, platinos</td>
+            </tr>
+            <tr>
+                <td>Neutra</td>
+                <td>Cualquier tono, experimenta</td>
+                <td>Depende de subtono</td>
+            </tr>
+        </table>
+
+        <h3>Preparación para la Coloración</h3>
+        <ul>
+            <li>Realiza una prueba de alergia 48 horas antes en cuero cabelludo.</li>
+            <li>No laves el cabello 24-48 horas antes para mejor adherencia.</li>
+            <li>Elige un tono que complemente tu tono de piel y estilo de vida.</li>
+            <li>Protege la piel del contorno con vaselina para evitar manchas.</li>
+            <li>Usa guantes y ropa vieja; los tintes manchan permanentemente.</li>
+            <li>Comunica tratamientos previos (permanente, keratina) al colorista.</li>
+        </ul>
+
+        <h3>Proceso de Coloración Profesional</h3>
+        <ul>
+            <li><strong>Consulta inicial:</strong> Análisis de cabello, selección de tono, previsión resultado.</li>
+            <li><strong>Preparación:</strong> Lavado si necesario, aplicación de protector cuero cabelludo.</li>
+            <li><strong>Aplicación:</strong> Técnica precisa según método (global, mechas, balayage).</li>
+            <li><strong>Tiempo de exposición:</strong> 20-45 minutos según fórmula y resultado deseado.</li>
+            <li><strong>Enjuague y tratamiento:</strong> Lavado con champú color, aplicación acondicionador.</li>
+            <li><strong>Corte y peinado:</strong> Ajuste de forma si necesario, peinado final.</li>
+        </ul>
+
+        <h3>Cuidado Post-Coloración</h3>
+        <ul>
+            <li>Lava el cabello con agua fría los primeros 3 días para sellar cutícula.</li>
+            <li>Usa champús y acondicionadores específicos para cabello teñido.</li>
+            <li>Aplica tratamientos de color o aceite reparador cada 1-2 semanas.</li>
+            <li>Evita el sol directo, cloro de piscinas y agua salada por 2 semanas.</li>
+            <li>Programa retoques cada 3-4 semanas según crecimiento y tipo de coloración.</li>
+            <li>Usa gorros o sombreros para protección solar adicional.</li>
+        </ul>
+
+        <h3>Problemas Comunes en Coloración</h3>
+        <table>
+            <tr>
+                <th>Problema</th>
+                <th>Causa</th>
+                <th>Solución</th>
+            </tr>
+            <tr>
+                <td>Desvanecimiento rápido</td>
+                <td>Exposición solar, lavados frecuentes</td>
+                <td>Protector UV, champú pH neutro, retoques</td>
+            </tr>
+            <tr>
+                <td>Color anaranjado</td>
+                <td>Oxidación, pH incorrecto</td>
+                <td>Shampoo morado, tratamientos neutralizantes</td>
+            </tr>
+            <tr>
+                <td>Daño del cabello</td>
+                <td>Procesos químicos agresivos</td>
+                <td>Tratamientos reparadores, pausas entre coloraciones</td>
+            </tr>
+            <tr>
+                <td>Manchas en piel</td>
+                <td>Contacto con tinte</td>
+                <td>Jabón neutro, limón, protector preventivo</td>
+            </tr>
+            <tr>
+                <td>Regrowth visible</td>
+                <td>Crecimiento natural</td>
+                <td>Retoques regulares, mantenimiento</td>
+            </tr>
+        </table>
+
+        <h3>Transición de Color Natural</h3>
+        <ul>
+            <li><strong>Negro a rubio:</strong> Requiere decoloración, proceso gradual para evitar daño.</li>
+            <li><strong>Castaño a rubio:</strong> Posible en 1-2 sesiones, dependiendo del tono base.</li>
+            <li><strong>Rubio a negro:</strong> Cambio directo posible, pero requiere mantenimiento.</li>
+            <li><strong>Agregar mechas:</strong> Técnica para dimensión sin cambio total de color.</li>
+            <li><strong>Cubrir canas:</strong> Permanente o semipermanente según densidad.</li>
+        </ul>
+
+        <h3>Nutrición para Cabello Teñido</h3>
+        <ul>
+            <li><strong>Proteínas:</strong> Reparan estructura dañada por químicos.</li>
+            <li><strong>Vitaminas A, E, C:</strong> Antioxidantes que protegen el color.</li>
+            <li><strong>Cobre y zinc:</strong> Ayudan en producción de melanina.</li>
+            <li><strong>Omega-3:</strong> Mantiene hidratación y brillo.</li>
+            <li><strong>Biotina:</strong> Fortalece cabello dañado por tintes.</li>
+        </ul>
+
+        <h3>Productos Esenciales para Cabello Teñido</h3>
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th>Función</th>
+                <th>Frecuencia</th>
+            </tr>
+            <tr>
+                <td>Champú pH neutro</td>
+                <td>Preserva color</td>
+                <td>Diariamente</td>
+            </tr>
+            <tr>
+                <td>Acondicionador color</td>
+                <td>Mantiene vibrancia</td>
+                <td>Después de cada lavado</td>
+            </tr>
+            <tr>
+                <td>Mascarilla reparadora</td>
+                <td>Nutre y repara</td>
+                <td>1-2 veces por semana</td>
+            </tr>
+            <tr>
+                <td>Sérum protector UV</td>
+                <td>Evita desvanecimiento</td>
+                <td>Diariamente</td>
+            </tr>
+            <tr>
+                <td>Tratamiento de color</td>
+                <td>Refresca vibrancia</td>
+                <td>Cada 2-3 semanas</td>
+            </tr>
+            <tr>
+                <td>Shampoo morado</td>
+                <td>Neutraliza amarillos</td>
+                <td>1-2 veces por semana</td>
+            </tr>
+        </table>
+
+        <h3>Tendencias de Coloración Actuales</h3>
+        <ul>
+            <li><strong>Money pieces:</strong> Mechas doradas estratégicas.</li>
+            <li><strong>Butterfly highlights:</strong> Mechas finas en capas.</li>
+            <li><strong>Root melting:</strong> Transición natural en raíces.</li>
+            <li><strong>Flame hair:</strong> Rojizos intensos con dimensión.</li>
+            <li><strong>Ice hair:</strong> Platinos fríos con acabados perfectos.</li>
+            <li><strong>Pastel hair:</strong> Colores suaves para looks trendy.</li>
+        </ul>
+
+        <h3>Formas de Cuidar el Color</h3>
+        <ul>
+            <li>Usa agua fría para lavar y enjuagar el cabello para sellar cutícula.</li>
+            <li>Aplica mascarillas nutritivas semanalmente para mantener hidratación.</li>
+            <li>Evita herramientas calientes excesivamente; usa protector térmico.</li>
+            <li>Corta las puntas regularmente para eliminar desvanecimiento visible.</li>
+            <li>Consulta a un colorista profesional para retoques y mantenimiento.</li>
+            <li>Protege el cabello del sol con sombreros o productos UV.</li>
+            <li>Haz pausas entre coloraciones para permitir recuperación natural.</li>
+            <li>Elige productos sulfate-free para preservar el color más tiempo.</li>
+        </ul>
+    </section>
+
+    <footer class="pie-pagina">
+        <div class="contenedor grid-pie">
+            <div class="columna-pie">
+                <h4>Contacto</h4>
+                <p>Tel: 123-456-7890<br>Correo: glamourtim3@gmail.com</p>
+                <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Horario</h4>
+                <p>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 15:00<br>Dom: Cerrado</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Síguenos</h4>
+                <p><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">WhatsApp</a></p>
+            </div>
+        </div>
+        <div class="contenedor">
+            <p class="copyright">© <span id="year">2025</span> Glamour Time. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../src/js/menu.js"></script>
+    <script src="../src/js/sesion.js"></script>
+    <script src="../src/js/auth-modal.js"></script>
+</body>
+</html>

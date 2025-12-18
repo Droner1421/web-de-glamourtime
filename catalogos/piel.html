@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/estilos.css">
+    <link rel="stylesheet" href="../src/css/catalogos.css">
+    <link rel="stylesheet" href="../src/css/responsive.css">
+    <link rel="stylesheet" href="../src/css/user-menu.css">
+    <title>Cuidado de la Piel - Glamour Time</title>
+</head>
+<body>
+    <div class="barra_superior">
+        <div class="info-contacto">
+            <a href="tel:123-456-7890" class="contacto-item">
+                <i class="icon">📞</i>
+                <span>123-456-7890</span>
+            </a>
+            <a href="mailto:glamourtim3@gmail.com" class="contacto-item">
+                <i class="icon">📧</i>
+                <span>glamourtim3@gmail.com</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="barra_navegacion">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon">💎</div>
+                <div class="titulo">Glamour Time</div>
+            </div>
+
+            <button class="alternar-menu" onclick="alternarMenu()" onkeydown="if(event.key==='Enter') alternarMenu();" style="border: none; background: none; padding: 0; cursor: pointer;" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="enlaces-nav">
+                <a href="../conocenos.html" class="item-nav">Conocenos</a>
+                <a href="../productos.html" class="item-nav">Productos</a>
+                <a href="../servicios.html" class="item-nav">Servicios</a>
+                <a href="catalogos.html" class="item-nav">Catalogos</a>
+                <a href="../mis-citas.html" class="item-nav">Citas</a>
+                <a href="#" class="item-nav usuario abrir-auth">
+                    <img class="avatar" src="../src/img/avatar.png" alt="usuario">
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1>Cuidado de la Piel</h1>
+        <p>Aprende a mantener una piel saludable y radiante con rutinas diarias, tratamientos efectivos y consejos personalizados para cada tipo de piel.</p>
+    </section>
+
+    <div class="imagen-catalogo">
+        <img src="../src/img/Faciales.jpg" alt="Tratamiento facial profesional" style="max-width: 600px;">
+    </div>
+
+    <section class="content seccion">
+        <h3>Introducción al Cuidado de la Piel</h3>
+        <p>La piel es el órgano más grande del cuerpo humano y requiere cuidados específicos según su tipo, edad y condiciones ambientales. Una rutina adecuada no solo mejora la apariencia, sino que previene problemas futuros y mantiene la salud dermatológica.</p>
+
+        <h3>Tipos de Piel</h3>
+        <table>
+            <tr>
+                <th>Tipo</th>
+                <th>Características</th>
+                <th>Cuidados Principales</th>
+            </tr>
+            <tr>
+                <td>Normal</td>
+                <td>Equilibrada, poros pequeños, buen tono</td>
+                <td>Hidratación básica, protección solar</td>
+            </tr>
+            <tr>
+                <td>Seca</td>
+                <td>Escamosa, tirante, sensible al frío</td>
+                <td>Hidratación intensa, evitar irritantes</td>
+            </tr>
+            <tr>
+                <td>Grasa</td>
+                <td>Brillante, poros dilatados, propensa a acné</td>
+                <td>Control de sebo, limpieza profunda</td>
+            </tr>
+            <tr>
+                <td>Mixta</td>
+                <td>Grasa en zona T, seca en mejillas</td>
+                <td>Productos balanceados, tratamientos localizados</td>
+            </tr>
+            <tr>
+                <td>Sensible</td>
+                <td>Irrita fácilmente, roja, reactiva</td>
+                <td>Productos suaves, evitar químicos agresivos</td>
+            </tr>
+            <tr>
+                <td>Madura</td>
+                <td>Arrugas, pérdida de elasticidad, manchas</td>
+                <td>Antiedad, colágeno, protección UV</td>
+            </tr>
+        </table>
+
+        <h3>Rutina Diaria de Cuidado</h3>
+        <ul>
+            <li><strong>Limpieza:</strong> Usa limpiadores suaves mañana y noche para remover impurezas sin despojar aceites naturales.</li>
+            <li><strong>Tonificación:</strong> Equilibra el pH y prepara la piel para la hidratación.</li>
+            <li><strong>Hidratación:</strong> Aplica cremas o serums específicos para tu tipo de piel.</li>
+            <li><strong>Protección solar:</strong> SPF 30+ diariamente, reaplica cada 2-3 horas al aire libre.</li>
+            <li><strong>Exfoliación:</strong> 2-3 veces por semana para remover células muertas y mejorar textura.</li>
+            <li><strong>Tratamientos específicos:</strong> Según necesidades (acné, anti-edad, manchas).</li>
+        </ul>
+
+        <h3>Cuidado para Piel Seca</h3>
+        <ul>
+            <li>Usa limpiadores cremosos o en leche, sin sulfatos ni alcohol.</li>
+            <li>Aplica hidratantes ricos en humectantes como ácido hialurónico, urea o glicerina.</li>
+            <li>Incorpora aceites faciales (jojoba, argán, rosa mosqueta) en tu rutina nocturna.</li>
+            <li>Evita baños calientes prolongados y usa humidificadores en ambientes secos.</li>
+            <li>Come alimentos ricos en ácidos grasos omega-3 y vitamina E.</li>
+            <li>Usa máscaras hidratantes 2-3 veces por semana.</li>
+        </ul>
+
+        <h3>Cuidado para Piel Grasosa</h3>
+        <ul>
+            <li>Limpia con productos oil-free, gel o espuma, no comedogénicos.</li>
+            <li>Usa tratamientos con ácido salicílico o benzoyl peroxide para controlar el sebo.</li>
+            <li>Aplica hidratantes ligeras, gelificadas o en gel, sin aceites pesados.</li>
+            <li>No te saltes el protector solar; opta por versiones mates o en gel.</li>
+            <li>Exfolia con productos químicos suaves para evitar irritación.</li>
+            <li>Come alimentos bajos en azúcares y grasas procesadas.</li>
+        </ul>
+
+        <h3>Cuidado para Piel Mixta</h3>
+        <ul>
+            <li>Usa productos balanceados que controlen el sebo sin resecar.</li>
+            <li>Aplica tratamientos localizados en zona T con cuidado.</li>
+            <li>Hidrata mejillas y cuello con productos más ricos.</li>
+            <li>Usa máscaras específicas para cada zona cuando sea necesario.</li>
+        </ul>
+
+        <h3>Cuidado para Piel Sensible</h3>
+        <ul>
+            <li>Elige productos hipoalergénicos, sin fragancias ni colorantes.</li>
+            <li>Realiza pruebas de parche antes de usar nuevos productos.</li>
+            <li>Evita exfoliantes físicos; opta por químicos suaves.</li>
+            <li>Usa protector solar mineral (óxido de zinc) para evitar irritación.</li>
+            <li>Consulta a un dermatólogo antes de tratamientos agresivos.</li>
+        </ul>
+
+        <h3>Cuidado Anti-Edad</h3>
+        <ul>
+            <li>Incorpora retinoides o retinol en tu rutina nocturna.</li>
+            <li>Usa productos con vitamina C para iluminar y proteger.</li>
+            <li>Aplica cremas con péptidos y colágeno para firmeza.</li>
+            <li>Usa protección solar alta diariamente para prevenir manchas.</li>
+            <li>Considera tratamientos profesionales como peelings o láser.</li>
+        </ul>
+
+        <h3>Problemas Comunes y Tratamientos</h3>
+        <table>
+            <tr>
+                <th>Problema</th>
+                <th>Síntomas</th>
+                <th>Tratamiento</th>
+            </tr>
+            <tr>
+                <td>Acné</td>
+                <td>Granos, espinillas, puntos negros</td>
+                <td>Limpieza profunda, tratamientos tópicos, antibióticos si necesario</td>
+            </tr>
+            <tr>
+                <td>Manchas solares</td>
+                <td>Áreas hiperpigmentadas</td>
+                <td>Protección solar, hidroquinona, vitamina C</td>
+            </tr>
+            <tr>
+                <td>Arrugas</td>
+                <td>Líneas finas, pérdida de elasticidad</td>
+                <td>Retinoides, péptidos, hidratación profunda</td>
+            </tr>
+            <tr>
+                <td>Rosácea</td>
+                <td>Enrojecimiento, vasos dilatados</td>
+                <td>Evitar triggers, láser vascular, cremas calmantes</td>
+            </tr>
+            <tr>
+                <td>Eczema</td>
+                <td>Piel roja, inflamada, con picazón</td>
+                <td>Cremas con corticosteroides, hidratación constante</td>
+            </tr>
+        </table>
+
+        <h3>Alimentación para una Piel Saludable</h3>
+        <ul>
+            <li>Antioxidantes: Bayas, verduras de hoja verde para combatir radicales libres.</li>
+            <li>Ácidos grasos: Pescado, nueces para mantener la barrera lipídica.</li>
+            <li>Vitamina C: Cítricos, pimientos para producción de colágeno.</li>
+            <li>Zinc: Carnes, legumbres para cicatrización y reducción de inflamación.</li>
+            <li>Agua: Al menos 2 litros diarios para hidratación celular.</li>
+        </ul>
+
+        <h3>Formas de Cuidar la Piel</h3>
+        <ul>
+            <li>Duerme 7-8 horas para permitir la regeneración celular nocturna.</li>
+            <li>Come alimentos ricos en antioxidantes como frutas y verduras.</li>
+            <li>Bebe al menos 2 litros de agua al día para hidratación interna.</li>
+            <li>Evita fumar y limita el consumo de alcohol que deshidratan.</li>
+            <li>Maneja el estrés con técnicas de relajación y ejercicio moderado.</li>
+            <li>Usa protección solar incluso en días nublados.</li>
+            <li>Limpia tu piel inmediatamente después de sudar o nadar.</li>
+            <li>Cambia fundas de almohada y toallas faciales regularmente.</li>
+        </ul>
+
+        <h3>Productos Esenciales</h3>
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th>Función</th>
+                <th>Frecuencia</th>
+            </tr>
+            <tr>
+                <td>Limpiador facial</td>
+                <td>Remover impurezas</td>
+                <td>Mañana y noche</td>
+            </tr>
+            <tr>
+                <td>Tónico</td>
+                <td>Equilibrar pH</td>
+                <td>Después de limpiar</td>
+            </tr>
+            <tr>
+                <td>Sérum</td>
+                <td>Tratamiento concentrado</td>
+                <td>Mañana/noche según activo</td>
+            </tr>
+            <tr>
+                <td>Crema hidratante</td>
+                <td>Restaurar humedad</td>
+                <td>Mañana y noche</td>
+            </tr>
+            <tr>
+                <td>Protector solar</td>
+                <td>Proteger de UV</td>
+                <td>Diariamente</td>
+            </tr>
+        </table>
+    </section>
+
+    <footer class="pie-pagina">
+        <div class="contenedor grid-pie">
+            <div class="columna-pie">
+                <h4>Contacto</h4>
+                <p>Tel: 123-456-7890<br>Correo: glamourtim3@gmail.com</p>
+                <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Horario</h4>
+                <p>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 15:00<br>Dom: Cerrado</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Síguenos</h4>
+                <p><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">WhatsApp</a></p>
+            </div>
+        </div>
+        <div class="contenedor">
+            <p class="copyright">© <span id="year">2025</span> Glamour Time. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../src/js/menu.js"></script>
+    <script src="../src/js/sesion.js"></script>
+    <script src="../src/js/auth-modal.js"></script>
+</body>
+</html>

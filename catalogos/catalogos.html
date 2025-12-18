@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/estilos.css">
+    <link rel="stylesheet" href="../src/css/catalogos.css">
+    <link rel="stylesheet" href="../src/css/responsive.css">
+    <link rel="stylesheet" href="../src/css/user-menu.css">
+    <title>Catalogos - Glamour Time</title>
+</head>
+<body>
+    <div class="barra_superior">
+        <div class="info-contacto">
+            <a href="tel:123-456-7890" class="contacto-item">
+                <i class="icon">📞</i>
+                <span>123-456-7890</span>
+            </a>
+            <a href="mailto:glamourtim3@gmail.com" class="contacto-item">
+                <i class="icon">📧</i>
+                <span>glamourtim3@gmail.com</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="barra_navegacion">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon">💎</div>
+                <div class="titulo">Glamour Time</div>
+            </div>
+
+            <button class="alternar-menu" onclick="alternarMenu()" onkeydown="if(event.key==='Enter') alternarMenu();" style="border: none; background: none; padding: 0; cursor: pointer;" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="enlaces-nav">
+                <a href="../conocenos.html" class="item-nav">Conocenos</a>
+                <a href="../productos.html" class="item-nav">Productos</a>
+                <a href="../servicios.html" class="item-nav">Servicios</a>
+                <a href="catalogos.html" class="item-nav active">Catalogos</a>
+                <a href="../mis-citas.html" class="item-nav">Citas</a>
+                <a href="#" class="item-nav usuario abrir-auth">
+                    <img class="avatar" src="../src/img/avatar.png" alt="usuario">
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1>Catalogos de Belleza</h1>
+        <p>Descubre nuestros consejos y guías para el cuidado de tu belleza. Explora temas como cabello, piel, uñas y más.</p>
+    </section>
+
+    <section class="catalogos-grid seccion">
+        <div class="contenedor">
+            <div class="grid-catalogos">
+                <a href="cabello.html" class="catalogo-card">
+                    <div class="catalogo-icon">💇‍♀️</div>
+                    <h3>Cuidado del Cabello</h3>
+                    <p>Consejos para mantener tu cabello saludable y brillante.</p>
+                </a>
+                <a href="piel.html" class="catalogo-card">
+                    <div class="catalogo-icon">🧴</div>
+                    <h3>Cuidado de la Piel</h3>
+                    <p>Rutinas y tratamientos para una piel radiante.</p>
+                </a>
+                <a href="manicura.html" class="catalogo-card">
+                    <div class="catalogo-icon">💅</div>
+                    <h3>Manicura y Pedicura</h3>
+                    <p>Técnicas y cuidados para uñas perfectas.</p>
+                </a>
+                <a href="maquillaje.html" class="catalogo-card">
+                    <div class="catalogo-icon">💄</div>
+                    <h3>Maquillaje</h3>
+                    <p>Guías para looks diarios y especiales.</p>
+                </a>
+                <a href="depilacion.html" class="catalogo-card">
+                    <div class="catalogo-icon">🪒</div>
+                    <h3>Depilación</h3>
+                    <p>Métodos seguros y efectivos para la depilación.</p>
+                </a>
+                <a href="faciales.html" class="catalogo-card">
+                    <div class="catalogo-icon">😌</div>
+                    <h3>Tratamientos Faciales</h3>
+                    <p>Tratamientos para rejuvenecer tu piel.</p>
+                </a>
+                <a href="unas.html" class="catalogo-card">
+                    <div class="catalogo-icon">✨</div>
+                    <h3>Cuidado de las Uñas</h3>
+                    <p>Consejos para uñas fuertes y saludables.</p>
+                </a>
+                <a href="estilismo.html" class="catalogo-card">
+                    <div class="catalogo-icon">✂️</div>
+                    <h3>Estilismo y Cortes</h3>
+                    <p>Tendencias y técnicas de corte de cabello.</p>
+                </a>
+                <a href="coloracion.html" class="catalogo-card">
+                    <div class="catalogo-icon">🎨</div>
+                    <h3>Coloración del Cabello</h3>
+                    <p>Guías para teñir y cuidar el color.</p>
+                </a>
+                <a href="hidratacion.html" class="catalogo-card">
+                    <div class="catalogo-icon">🌿</div>
+                    <h3>Hidratación Corporal</h3>
+                    <p>Rutinas para piel suave y hidratada.</p>
+                </a>
+                <a href="masajes.html" class="catalogo-card">
+                    <div class="catalogo-icon">👐</div>
+                    <h3>Masajes y Relajación</h3>
+                    <p>Técnicas de masaje para bienestar.</p>
+                </a>
+                <a href="consejos.html" class="catalogo-card">
+                    <div class="catalogo-icon">💡</div>
+                    <h3>Consejos de Belleza General</h3>
+                    <p>Tips generales para verse y sentirse bien.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pie-pagina">
+        <div class="contenedor grid-pie">
+            <div class="columna-pie">
+                <h4>Contacto</h4>
+                <p>Tel: 123-456-7890<br>Correo: glamourtim3@gmail.com</p>
+                <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Horario</h4>
+                <p>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 15:00<br>Dom: Cerrado</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Síguenos</h4>
+                <p><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">WhatsApp</a></p>
+            </div>
+        </div>
+        <div class="contenedor">
+            <p class="copyright">© <span id="year">2025</span> Glamour Time. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../src/js/menu.js"></script>
+    <script src="../src/js/sesion.js"></script>
+    <script src="../src/js/auth-modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/estilos.css">
+    <link rel="stylesheet" href="../src/css/catalogos.css">
+    <link rel="stylesheet" href="../src/css/responsive.css">
+    <link rel="stylesheet" href="../src/css/user-menu.css">
+    <title>Hidratación Corporal - Glamour Time</title>
+</head>
+<body>
+    <div class="barra_superior">
+        <div class="info-contacto">
+            <a href="tel:123-456-7890" class="contacto-item">
+                <i class="icon">📞</i>
+                <span>123-456-7890</span>
+            </a>
+            <a href="mailto:glamourtim3@gmail.com" class="contacto-item">
+                <i class="icon">📧</i>
+                <span>glamourtim3@gmail.com</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="barra_navegacion">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon">💎</div>
+                <div class="titulo">Glamour Time</div>
+            </div>
+
+            <button class="alternar-menu" onclick="alternarMenu()" onkeydown="if(event.key==='Enter') alternarMenu();" style="border: none; background: none; padding: 0; cursor: pointer;" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="enlaces-nav">
+                <a href="../conocenos.html" class="item-nav">Conocenos</a>
+                <a href="../productos.html" class="item-nav">Productos</a>
+                <a href="../servicios.html" class="item-nav">Servicios</a>
+                <a href="catalogos.html" class="item-nav">Catalogos</a>
+                <a href="../mis-citas.html" class="item-nav">Citas</a>
+                <a href="#" class="item-nav usuario abrir-auth">
+                    <img class="avatar" src="../src/img/avatar.png" alt="usuario">
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1>Hidratación Corporal</h1>
+        <p>Descubre rutinas completas de hidratación corporal para mantener tu piel suave, nutrida y radiante en todo momento.</p>
+    </section>
+
+    <div class="imagen-catalogo">
+        <img src="../src/img/hidratacion.jpg" alt="Hidratación corporal profesional" style="max-width: 600px;">
+    </div>
+
+    <section class="content seccion">
+        <h3>Introducción a la Hidratación Corporal</h3>
+        <p>La hidratación corporal es fundamental para mantener la piel sana, prevenir el envejecimiento prematuro y mejorar la apariencia general. Una rutina adecuada combina hidratación externa con nutrición interna para resultados óptimos.</p>
+
+        <h3>Tipos de Piel y Necesidades de Hidratación</h3>
+        <table>
+            <tr>
+                <th>Tipo de Piel</th>
+                <th>Características</th>
+                <th>Hidratación Recomendada</th>
+            </tr>
+            <tr>
+                <td>Seca</td>
+                <td>Escamosa, tirante, sensible al frío</td>
+                <td>Rica, con humectantes, 2-3 veces al día</td>
+            </tr>
+            <tr>
+                <td>Grasa</td>
+                <td>Brillante, poros dilatados, propensa a acné</td>
+                <td>Ligera, oil-free, enfocada en control de sebo</td>
+            </tr>
+            <tr>
+                <td>Mixta</td>
+                <td>Grasa en zona T, seca en mejillas</td>
+                <td>Balanceada, productos específicos por zona</td>
+            </tr>
+            <tr>
+                <td>Sensible</td>
+                <td>Irrita fácilmente, roja, reactiva</td>
+                <td>Hipoalergénica, sin fragancias, calmante</td>
+            </tr>
+            <tr>
+                <td>Madura</td>
+                <td>Arrugas, pérdida de elasticidad</td>
+                <td>Antiedad, con colágeno, nutritiva intensa</td>
+            </tr>
+            <tr>
+                <td>Normal</td>
+                <td>Equilibrada, saludable</td>
+                <td>Cualquier tipo, mantenimiento básico</td>
+            </tr>
+        </table>
+
+        <h3>Rutina Diaria de Hidratación</h3>
+        <ul>
+            <li><strong>Después del baño:</strong> Aplica productos hidratantes en piel húmeda para mejor absorción.</li>
+            <li><strong>Mañana:</strong> Usa cremas ligeras con SPF para protección diaria.</li>
+            <li><strong>Noche:</strong> Aplica tratamientos más ricos para regeneración nocturna.</li>
+            <li><strong>Áreas específicas:</strong> Dedica atención a codos, rodillas, talones y manos.</li>
+            <li><strong>Masaje:</strong> Masajea suavemente para mejorar circulación y absorción.</li>
+            <li><strong>Frecuencia:</strong> 2 veces al día mínimo, más según tipo de piel y clima.</li>
+        </ul>
+
+        <h3>Rutina Semanal de Hidratación Intensiva</h3>
+        <ul>
+            <li>Exfolia suavemente 1-2 veces por semana para remover células muertas.</li>
+            <li>Aplica mascarillas corporales nutritivas por 15-20 minutos.</li>
+            <li>Usa aceites corporales en áreas muy secas como baño de aceite.</li>
+            <li>Haz baños de inmersión con sales Epsom o aceites esenciales.</li>
+            <li>Masajea con guantes exfoliantes para mejorar circulación.</li>
+        </ul>
+
+        <h3>Productos para Hidratación Corporal</h3>
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th>Tipo de Piel</th>
+                <th>Beneficio Principal</th>
+            </tr>
+            <tr>
+                <td>Cremas corporales</td>
+                <td>Todos los tipos</td>
+                <td>Hidratación diaria básica</td>
+            </tr>
+            <tr>
+                <td>Leche corporal</td>
+                <td>Seca, madura</td>
+                <td>Absorción rápida, ligera</td>
+            </tr>
+            <tr>
+                <td>Aceites corporales</td>
+                <td>Muy seca, madura</td>
+                <td>Nutrición profunda, sellado</td>
+            </tr>
+            <tr>
+                <td>Mascarillas corporales</td>
+                <td>Todos, tratamiento</td>
+                <td>Hidratación intensiva semanal</td>
+            </tr>
+            <tr>
+                <td>Lociones</td>
+                <td>Grasa, mixta, verano</td>
+                <td>Hidratación ligera, rápida absorción</td>
+            </tr>
+            <tr>
+                <td>Bálsamos</td>
+                <td>Muy seca, invierno</td>
+                <td>Hidratación rica, protección</td>
+            </tr>
+        </table>
+
+        <h3>Ingredientes Clave para Hidratación</h3>
+        <table>
+            <tr>
+                <th>Ingrediente</th>
+                <th>Función</th>
+                <th>Fuente Natural</th>
+            </tr>
+            <tr>
+                <td>Ácido hialurónico</td>
+                <td>Retiene agua, humecta</td>
+                <td>Suero de pollo, soja</td>
+            </tr>
+            <tr>
+                <td>Urea</td>
+                <td>Hidrata profundamente</td>
+                <td>Orina (sintético seguro)</td>
+            </tr>
+            <tr>
+                <td>Glicerina</td>
+                <td>Atrapa humedad</td>
+                <td>Aceite de palma, soja</td>
+            </tr>
+            <tr>
+                <td>Aceite de jojoba</td>
+                <td>Similar a sebo natural</td>
+                <td>Semillas de jojoba</td>
+            </tr>
+            <tr>
+                <td>Aceite de argán</td>
+                <td>Antioxidante, nutritivo</td>
+                <td>Nueces de argán</td>
+            </tr>
+            <tr>
+                <td>Manteca de karité</td>
+                <td>Protege barrera cutánea</td>
+                <td>Nueces de karité</td>
+            </tr>
+        </table>
+
+        <h3>Hidratación por Estaciones del Año</h3>
+        <ul>
+            <li><strong>Verano:</strong> Hidratantes ligeras con SPF, enfocadas en protección solar.</li>
+            <li><strong>Otoño:</strong> Transición a productos más ricos, prevención de sequedad.</li>
+            <li><strong>Invierno:</strong> Bálsamos y aceites intensos, protección contra frío.</li>
+            <li><strong>Primavera:</strong> Ligero pero nutritivo, preparación para verano.</li>
+        </ul>
+
+        <h3>Problemas de Deshidratación y Soluciones</h3>
+        <table>
+            <tr>
+                <th>Problema</th>
+                <th>Síntomas</th>
+                <th>Solución</th>
+            </tr>
+            <tr>
+                <td>Piel seca</td>
+                <td>Tirante, escamosa, picazón</td>
+                <td>Cremas ricas, humidificadores, agua</td>
+            </tr>
+            <tr>
+                <td>Piel agrietada</td>
+                <td>Grietas, dolor, sangrado</td>
+                <td>Bálsamos reparadores, guantes, protección</td>
+            </tr>
+            <tr>
+                <td>Eccema</td>
+                <td>Roja, inflamada, con picazón</td>
+                <td>Cremas calmantes, evitar irritantes</td>
+            </tr>
+            <tr>
+                <td>Piel madura deshidratada</td>
+                <td>Arrugas profundas, flacidez</td>
+                <td>Hidratantes con colágeno, retinoides</td>
+            </tr>
+            <tr>
+                <td>Psoriasis</td>
+                <td>Placas escamosas, roja</td>
+                <td>Hidratación constante, tratamientos médicos</td>
+            </tr>
+        </table>
+
+        <h3>Alimentación para Hidratación Interna</h3>
+        <ul>
+            <li><strong>Agua:</strong> 2-3 litros diarios para hidratación celular.</li>
+            <li><strong>Frutas:</strong> Sandía, naranja, piña ricas en agua.</li>
+            <li><strong>Verduras:</strong> Pepino, lechuga, apio hidratantes.</li>
+            <li><strong>Ácidos grasos omega-3:</strong> Pescado, nueces, semillas.</li>
+            <li><strong>Antioxidantes:</strong> Bayas, verduras de hoja verde.</li>
+            <li><strong>Vitaminas A, E:</strong> Zanahorias, almendras, espinacas.</li>
+        </ul>
+
+        <h3>Técnicas de Aplicación para Mejor Absorción</h3>
+        <ul>
+            <li>Aplica productos en piel húmeda después del baño.</li>
+            <li>Usa movimientos circulares ascendentes para estimular circulación.</li>
+            <li>Masajea con presión ligera, no frotes agresivamente.</li>
+            <li>Dedica más tiempo a áreas secas como codos y rodillas.</li>
+            <li>Deja absorber completamente antes de vestir.</li>
+        </ul>
+
+        <h3>Formas de Cuidar la Hidratación</h3>
+        <ul>
+            <li>Bebe al menos 2 litros de agua al día para hidratación interna.</li>
+            <li>Dúchate con agua tibia, no caliente, para no resecar la piel.</li>
+            <li>Usa humidificadores en ambientes secos o climatizados.</li>
+            <li>Protege la piel del sol, viento y frío con ropa y cremas.</li>
+            <li>Exfolia suavemente 1-2 veces por semana para remover barreras.</li>
+            <li>Incluye ácidos grasos omega-3 en tu dieta regularmente.</li>
+            <li>Evita jabones agresivos que eliminen aceites naturales.</li>
+            <li>Duerme lo suficiente para permitir la regeneración celular.</li>
+        </ul>
+    </section>
+
+    <footer class="pie-pagina">
+        <div class="contenedor grid-pie">
+            <div class="columna-pie">
+                <h4>Contacto</h4>
+                <p>Tel: 123-456-7890<br>Correo: glamourtim3@gmail.com</p>
+                <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Horario</h4>
+                <p>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 15:00<br>Dom: Cerrado</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Síguenos</h4>
+                <p><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">WhatsApp</a></p>
+            </div>
+        </div>
+        <div class="contenedor">
+            <p class="copyright">© <span id="year">2025</span> Glamour Time. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../src/js/menu.js"></script>
+    <script src="../src/js/sesion.js"></script>
+    <script src="../src/js/auth-modal.js"></script>
+</body>
+</html>

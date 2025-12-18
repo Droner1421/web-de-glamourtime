@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Panel de Control - Glamour Time</title>
+  <link rel="stylesheet" href="src/css/admin.css">
+  <style>
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+  <script>
+    // Verificar si el usuario es admin
+    async function verificarAdmin() {
+      try {
+        const response = await fetch('verificar-sesion.php');
+        const data = await response.json();
+        
+        if (!data.logueado || !data.es_admin) {
+          // No es admin o no está logueado, redirigir a index
+          window.location.href = 'index.html';
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        window.location.href = 'index.html';
+      }
+    }
+    
+    function toggleMenu() {
+      const nav = document.querySelector('.navegacion-panel');
+      nav.classList.toggle('activa');
+    }
+
+    // Ejecutar verificación cuando carga la página
+    verificarAdmin();
+  </script>
+</head>
+<body>
+  <div class="panel">
+    <div class="panel-lateral">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <div class="marca-panel">Glamour Time</div>
+      <nav class="navegacion-panel">
+        <a class="elemento-nav activo" style="background-color: #ffd900;" href="#tablero">Tablero</a>
+        <a class="elemento-nav" href="admin-citas.html">Citas</a>
+        <a class="elemento-nav" href="admin-clientes.html">Clientes</a>
+        <a class="elemento-nav" href="admin-productos.html">Gestionar Productos</a>
+        <a class="elemento-nav" href="agregar-productos.html">Agregar Producto</a>
+      </nav>
+      <div class="pie-lateral">Conectado como Admin</div>
+    </div>
+
+    <div class="panel-principal">
+      <div class="barra-superior">
+        <h1 class="titulo-barra">Tablero</h1>
+        <div class="acciones-barra">
+          <input class="buscador" placeholder="Buscar..." aria-label="Buscar">
+          <a class="boton" href="index.html">Salir</a>
+        </div>
+      </div>
+
+      <div id="tablero" class="seccion-panel">
+        <div class="tarjetas">
+          <div class="tarjeta">
+            <h3>Reservas hoy</h3>
+            <p class="estadistica">12</p>
+            <p class="meta">(5 confirmadas)</p>
+          </div>
+          <div class="tarjeta">
+            <h3>Clientes</h3>
+            <p class="estadistica">432</p>
+            <p class="meta">(activos este mes)</p>
+          </div>
+          <div class="tarjeta">
+            <h3>Ingresos</h3>
+            <p class="estadistica">$5,230</p>
+            <p class="meta">(últimos 7 días)</p>
+          </div>
+        </div>
+
+        <div class="rejilla-panel">
+          <div class="columna-panel">
+            <h2>Próximas citas</h2>
+            <table class="tabla">
+              <thead>
+                <tr>
+                  <th>Hora</th>
+                  <th>Cliente</th>
+                  <th>Servicio</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>09:00</td>
+                  <td>María López</td>
+                  <td>Manicura</td>
+                  <td>Confirmada</td>
+                </tr>
+                <tr>
+                  <td>10:30</td>
+                  <td>Andrea Ruiz</td>
+                  <td>Corte</td>
+                  <td>Pendiente</td>
+                </tr>
+                <tr>
+                  <td>12:00</td>
+                  <td>Lucía García</td>
+                  <td>Tinte</td>
+                  <td>Confirmada</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="columna-panel lateral">
+            <h2>Accesos rápidos</h2>
+            <ul class="lista-rapida">
+              <li><a href="admin-citas.html">Gestionar citas</a></li>
+              <li><a href="admin-clientes.html">Ver clientes</a></li>
+              <li><a href="admin-productos.html">Gestionar productos</a></li>
+              <li><a href="agregar-productos.html">Agregar producto</a></li>
+              <li><a href="productos.html">Ver productos</a></li>
+              <li><a href="#">Agregar servicio</a></li>
+            </ul>
+
+            <h2>Notas</h2>
+            <textarea class="notas" rows="6" placeholder="Anota recordatorios..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

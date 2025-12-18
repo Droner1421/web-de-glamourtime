@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/estilos.css">
+    <link rel="stylesheet" href="src/css/servicios.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
+    <link rel="stylesheet" href="src/css/user-menu.css">
+    <title>Servicios - Glamour Time</title>
+</head>
+<body>
+    <div class="barra_superior"> 
+        <div class="info-contacto">
+            <a href="tel:123-456-7890" class="contacto-item">
+                <i class="icon">📞</i>
+                <span>123-456-7890</span>
+            </a>
+            <a href="mailto:glamourtim3@gmail.com" class="contacto-item">
+                <i class="icon">📧</i>
+                <span>glamourtim3@gmail.com</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="barra_navegacion">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon">💎</div>
+                <div class="titulo">Glamour Time</div>
+            </div>
+            <div class="alternar-menu" onclick="alternarMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="enlaces-nav">
+                <a href="index.html" class="item-nav">Inicio</a>
+                <a href="conocenos.html" class="item-nav">Conócenos</a>
+                <a href="productos.html" class="item-nav">Productos</a>
+                <a href="servicios.html" class="item-nav active">Servicios</a>
+                <a href="#" class="item-nav usuario abrir-auth">
+                    <img class="avatar" src="/src/img/avatar.png" alt="usuario">
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="servicios-main">
+        <section class="hero-servicios">
+            <h1>Nuestros Servicios</h1>
+            <p class="subtitulo">Experiencia y calidad para tu belleza</p>
+        </section>
+
+        <section class="servicios-grid">
+            <div class="contenedor">
+                <div class="servicio-card manicura">
+                    <div class="servicio-imagen">
+                        <img src="src/img/Manicura.jpg" alt="Manicura & Pedicura">
+                    </div>
+                    <div class="servicio-contenido">
+                        <h2>Manicura & Pedicura</h2>
+                        <p>Cuidado experto para tus manos y pies con los mejores productos.</p>
+                        <ul class="servicios-lista">
+                            <li>Manicura básica</li>
+                            <li>Manicura Spa</li>
+                            <li>Pedicura de lujo</li>
+                            <li>Diseño de uñas</li>
+                        </ul>
+                        <a href="index.html?servicio=manicure#reserva" class="btn-reservar">Reservar Ahora</a>
+                    </div>
+                </div>
+
+                <div class="servicio-card corte">
+                    <div class="servicio-imagen">
+                        <img src="src/img/Corte.jpg" alt="Corte & Peinado">
+                    </div>
+                    <div class="servicio-contenido">
+                        <h2>Corte & Peinado</h2>
+                        <p>Transforma tu look con nuestros expertos estilistas.</p>
+                        <ul class="servicios-lista">
+                            <li>Corte de dama</li>
+                            <li>Corte de caballero</li>
+                            <li>Peinados de ocasión</li>
+                            <li>Tratamientos capilares</li>
+                        </ul>
+                        <a href="index.html?servicio=corte#reserva" class="btn-reservar">Reservar Ahora</a>
+                    </div>
+                </div>
+
+                <div class="servicio-card tintes">
+                    <div class="servicio-imagen">
+                        <img src="src/img/Tintes.jpeg" alt="Tintes & Mechas">
+                    </div>
+                    <div class="servicio-contenido">
+                        <h2>Tintes & Mechas</h2>
+                        <p>Color profesional y técnicas innovadoras para tu cabello.</p>
+                        <ul class="servicios-lista">
+                            <li>Tinte completo</li>
+                            <li>Mechas y reflejos</li>
+                            <li>Balayage</li>
+                            <li>Coloración personalizada</li>
+                        </ul>
+                        <a href="index.html?servicio=tintes#reserva" class="btn-reservar">Reservar Ahora</a>
+                    </div>
+                </div>
+
+                <div class="servicio-card faciales">
+                    <div class="servicio-imagen">
+                        <img src="src/img/Faciales.jpg" alt="Faciales & Tratamientos">
+                    </div>
+                    <div class="servicio-contenido">
+                        <h2>Faciales & Tratamientos</h2>
+                        <p>Cuida y rejuvenece tu piel con nuestros tratamientos especializados.</p>
+                        <ul class="servicios-lista">
+                            <li>Limpieza facial profunda</li>
+                            <li>Tratamientos anti-edad</li>
+                            <li>Mascarillas especiales</li>
+                            <li>Hidratación intensiva</li>
+                        </ul>
+                        <a href="index.html?servicio=faciales#reserva" class="btn-reservar">Reservar Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="contenedor grid-pie">
+            <div class="columna-pie">
+                <h4>Contacto</h4>
+                <p>Tel: 123-456-7890<br>Correo: glamourtim3@gmail.com</p>
+                <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Horario</h4>
+                <p>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 15:00<br>Dom: Cerrado</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Síguenos</h4>
+                <p><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">WhatsApp</a></p>
+            </div>
+        </div>
+        <div class="contenedor">
+            <p class="copyright">© <span id="year">2025</span> Glamour Time. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="src/js/menu.js"></script>
+    <script src="src/js/sesion.js"></script>
+    <script src="src/js/auth-modal.js"></script>
+</body>
+</html>

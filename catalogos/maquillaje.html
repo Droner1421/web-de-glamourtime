@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/estilos.css">
+    <link rel="stylesheet" href="../src/css/catalogos.css">
+    <link rel="stylesheet" href="../src/css/responsive.css">
+    <link rel="stylesheet" href="../src/css/user-menu.css">
+    <title>Maquillaje - Glamour Time</title>
+</head>
+<body>
+    <div class="barra_superior">
+        <div class="info-contacto">
+            <a href="tel:123-456-7890" class="contacto-item">
+                <i class="icon">📞</i>
+                <span>123-456-7890</span>
+            </a>
+            <a href="mailto:glamourtim3@gmail.com" class="contacto-item">
+                <i class="icon">📧</i>
+                <span>glamourtim3@gmail.com</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="barra_navegacion">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon">💎</div>
+                <div class="titulo">Glamour Time</div>
+            </div>
+
+            <button class="alternar-menu" onclick="alternarMenu()" onkeydown="if(event.key==='Enter') alternarMenu();" style="border: none; background: none; padding: 0; cursor: pointer;" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="enlaces-nav">
+                <a href="../conocenos.html" class="item-nav">Conocenos</a>
+                <a href="../productos.html" class="item-nav">Productos</a>
+                <a href="../servicios.html" class="item-nav">Servicios</a>
+                <a href="catalogos.html" class="item-nav">Catalogos</a>
+                <a href="../mis-citas.html" class="item-nav">Citas</a>
+                <a href="#" class="item-nav usuario abrir-auth">
+                    <img class="avatar" src="../src/img/avatar.png" alt="usuario">
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1>Maquillaje</h1>
+        <p>Aprende técnicas profesionales de maquillaje para realzar tu belleza natural en cualquier ocasión, desde looks diarios hasta eventos especiales.</p>
+    </section>
+
+    <div class="imagen-catalogo">
+        <img src="../src/img/maquillaje.jpg" alt="Maquillaje profesional" style="max-width: 600px;">
+    </div>
+
+    <section class="content seccion">
+        <h3>Introducción al Maquillaje</h3>
+        <p>El maquillaje es una forma de arte que realza la belleza natural. Más allá de la estética, requiere técnica, conocimiento de productos y cuidado de la piel. Una buena rutina de maquillaje puede mejorar la confianza y expresar personalidad.</p>
+
+        <h3>Tipos de Piel y Maquillaje Adecuado</h3>
+        <table>
+            <tr>
+                <th>Tipo de Piel</th>
+                <th>Base Recomendada</th>
+                <th>Productos a Evitar</th>
+            </tr>
+            <tr>
+                <td>Seca</td>
+                <td>Cremosa, hidratante</td>
+                <td>Polvos mate, exfoliantes agresivos</td>
+            </tr>
+            <tr>
+                <td>Grasa</td>
+                <td>Gel, oil-free</td>
+                <td>Productos pesados, comedogénicos</td>
+            </tr>
+            <tr>
+                <td>Mixta</td>
+                <td>Híbrida, ligera</td>
+                <td>Exceso de producto en zona T</td>
+            </tr>
+            <tr>
+                <td>Sensible</td>
+                <td>Mineral, hipoalergénica</td>
+                <td>Fragancias, químicos irritantes</td>
+            </tr>
+            <tr>
+                <td>Madura</td>
+                <td>BB/CC cream, hidratante</td>
+                <td>Productos que resequen más</td>
+            </tr>
+        </table>
+
+        <h3>Rutina Básica de Maquillaje</h3>
+        <ul>
+            <li><strong>Preparación:</strong> Limpia e hidrata la piel con productos adecuados.</li>
+            <li><strong>Primer:</strong> Aplica base para prolongar duración y mejorar textura.</li>
+            <li><strong>Corrector:</strong> Cubre ojeras, manchas e imperfecciones específicas.</li>
+            <li><strong>Base:</strong> Uniforma el tono con producto que combine con tu piel.</li>
+            <li><strong>Polvos:</strong> Fija la base y controla brillo (opcional según tipo de piel).</li>
+            <li><strong>Cejas:</strong> Define y rellena con lápiz o polvo natural.</li>
+            <li><strong>Ojos:</strong> Sombras neutras, delineador y máscara para definición.</li>
+            <li><strong>Rubor:</strong> Añade dimensión a pómulos con tonos naturales.</li>
+            <li><strong>Labios:</strong> Bálsamo o labial que complemente el look.</li>
+        </ul>
+
+        <h3>Maquillaje para el Día</h3>
+        <ul>
+            <li>Opta por tonos naturales: beige, nude, rosados suaves.</li>
+            <li>Enfócate en iluminar y corregir imperfecciones suavemente.</li>
+            <li>Usa productos de larga duración pero ligeros.</li>
+            <li>Mantén el look fresco y natural, como si no llevaras maquillaje.</li>
+            <li>Énfasis en cejas, máscara y un toque de rubor.</li>
+            <li>Protector solar incorporado en la base para protección UV.</li>
+        </ul>
+
+        <h3>Maquillaje para Eventos Nocturnos</h3>
+        <ul>
+            <li>Agrega más definición con sombras oscuras y ahumados.</li>
+            <li>Usa labiales intensos y duraderos (rojo, borgoña).</li>
+            <li>Incorpora brillo en pómulos, párpados y labios.</li>
+            <li>Experimenta con delineados dramáticos o alas perfectas.</li>
+            <li>Añade iluminador para resaltar puntos altos del rostro.</li>
+            <li>Usa fijadores en spray para mantener el look intacto.</li>
+        </ul>
+
+        <h3>Técnicas de Maquillaje Profesional</h3>
+        <table>
+            <tr>
+                <th>Técnica</th>
+                <th>Descripción</th>
+                <th>Cuándo Usar</th>
+            </tr>
+            <tr>
+                <td>Contouring</td>
+                <td>Definir rasgos usando sombras y luces</td>
+                <td>Looks dramáticos, rostros redondos</td>
+            </tr>
+            <tr>
+                <td>Strobing</td>
+                <td>Iluminar puntos altos con productos brillantes</td>
+                <td>Piel apagada, eventos nocturnos</td>
+            </tr>
+            <tr>
+                <td>Baking</td>
+                <td>Fijar con polvos y remover exceso</td>
+                <td>Maquillaje de larga duración</td>
+            </tr>
+            <tr>
+                <td>Smoky eye</td>
+                <td>Ahumado con sombras oscuras</td>
+                <td>Noche, eventos formales</td>
+            </tr>
+            <tr>
+                <td>Maquillaje mineral</td>
+                <td>Productos naturales sin químicos</td>
+                <td>Piel sensible, looks naturales</td>
+            </tr>
+        </table>
+
+        <h3>Productos Esenciales de Maquillaje</h3>
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th>Función</th>
+                <th>Tipo Recomendado</th>
+            </tr>
+            <tr>
+                <td>Base</td>
+                <td>Uniformar tono</td>
+                <td>Líquida, cushion, BB cream</td>
+            </tr>
+            <tr>
+                <td>Corrector</td>
+                <td>Cubrir imperfecciones</td>
+                <td>Líquido, stick, en crema</td>
+            </tr>
+            <tr>
+                <td>Sombras</td>
+                <td>Definir ojos</td>
+                <td>Paleta neutra, matte</td>
+            </tr>
+            <tr>
+                <td>Máscara</td>
+                <td>Alargar pestañas</td>
+                <td>Volumen, alargadora</td>
+            </tr>
+            <tr>
+                <td>Rubor</td>
+                <td>Añadir color a mejillas</td>
+                <td>Polvo, crema rosado</td>
+            </tr>
+            <tr>
+                <td>Labial</td>
+                <td>Definir labios</td>
+                <td>Bálsamo tinte, mate</td>
+            </tr>
+        </table>
+
+        <h3>Cuidado de la Piel con Maquillaje</h3>
+        <ul>
+            <li>Limpia las herramientas (brochas, esponjas) regularmente con jabón neutro.</li>
+            <li>Quita el maquillaje completamente antes de dormir usando desmaquillantes suaves.</li>
+            <li>Usa productos no comedogénicos para evitar obstruir poros.</li>
+            <li>Hidrata la piel después de remover el maquillaje con sérums nocturnos.</li>
+            <li>Revisa fechas de caducidad de productos; desecha después de 6-12 meses.</li>
+            <li>No compartas productos personales para evitar infecciones.</li>
+            <li>Haz pausas en el maquillaje para permitir que la piel respire.</li>
+        </ul>
+
+        <h3>Errores Comunes y Cómo Corregirlos</h3>
+        <ul>
+            <li><strong>Base desigual:</strong> Mezcla bien y usa primer adecuado.</li>
+            <li><strong>Contouring marcado:</strong> Usa productos cremosos y difumina bien.</li>
+            <li><strong>Sombras caídas:</strong> Fija con polvos translúcidos bajo los ojos.</li>
+            <li><strong>Labial manchado:</strong> Delimita con lápiz y usa base labial.</li>
+            <li><strong>Maquillaje que dura poco:</strong> Usa fijadores en spray al final.</li>
+        </ul>
+
+        <h3>Formas de Cuidar la Piel al Maquillarse</h3>
+        <ul>
+            <li>Limpia las herramientas regularmente para evitar bacterias.</li>
+            <li>Quita el maquillaje completamente antes de dormir.</li>
+            <li>Usa productos no comedogénicos.</li>
+            <li>Hidrata la piel después de remover el maquillaje.</li>
+            <li>Revisa fechas de caducidad de productos.</li>
+            <li>Incorpora tratamientos anti-edad en tu rutina.</li>
+            <li>Protege la piel del sol con SPF incorporado.</li>
+            <li>Descansa la piel sin maquillaje al menos 1-2 días por semana.</li>
+        </ul>
+    </section>
+
+    <footer class="pie-pagina">
+        <div class="contenedor grid-pie">
+            <div class="columna-pie">
+                <h4>Contacto</h4>
+                <p>Tel: 123-456-7890<br>Correo: glamourtim3@gmail.com</p>
+                <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Horario</h4>
+                <p>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 15:00<br>Dom: Cerrado</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Síguenos</h4>
+                <p><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">WhatsApp</a></p>
+            </div>
+        </div>
+        <div class="contenedor">
+            <p class="copyright">© <span id="year">2025</span> Glamour Time. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../src/js/menu.js"></script>
+    <script src="../src/js/sesion.js"></script>
+    <script src="../src/js/auth-modal.js"></script>
+</body>
+</html>

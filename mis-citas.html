@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/estilos.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
+    <link rel="stylesheet" href="src/css/user-menu.css">
+    <link rel="stylesheet" href="src/css/mis-citas.css">
+    <title>Mis Citas - Glamour Time</title>
+</head>
+<body>
+    <div class="barra_superior">
+        <div class="info-contacto">
+            <a href="tel:123-456-7890" class="contacto-item">
+                <i class="icon">📞</i>
+                <span>123-456-7890</span>
+            </a>
+            <a href="mailto:glamourtim3@gmail.com" class="contacto-item">
+                <i class="icon">📧</i>
+                <span>glamourtim3@gmail.com</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="barra_navegacion">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon">💎</div>
+                <div class="titulo">Glamour Time</div>
+            </div>
+            <div class="alternar-menu" onclick="alternarMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="enlaces-nav">
+                <a href="index.html" class="item-nav">Inicio</a>
+                <a href="conocenos.html" class="item-nav">Conócenos</a>
+                <a href="productos.html" class="item-nav">Productos</a>
+                <a href="servicios.html" class="item-nav">Servicios</a>
+                <a href="mis-citas.html" class="item-nav active">Mis Citas</a>
+                <a href="#" class="item-nav usuario abrir-auth">
+                    <img class="avatar" src="/src/img/avatar.png" alt="usuario">
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <div class="mis-citas-contenedor">
+            <div class="mis-citas-header">
+                <h1>📅 Mis Citas</h1>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <div class="notificaciones-widget">
+                        <button id="btn-notificaciones" class="btn-notificaciones" onclick="toggleNotificaciones()">
+                            🔔 <span id="contador-notificaciones" class="contador-notificaciones" style="display: none;">0</span>
+                        </button>
+                        <div id="panel-notificaciones" class="panel-notificaciones" style="display: none;">
+                            <div class="notificaciones-header">
+                                <h3>Notificaciones</h3>
+                                <button onclick="marcarTodasLeidas()" class="btn-pequeño">Marcar como leído</button>
+                            </div>
+                            <div id="lista-notificaciones" class="lista-notificaciones">
+                                <p style="text-align: center; color: #999;">Cargando...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="servicios.html" class="btn-nueva-cita">+ Nueva Cita</a>
+                </div>
+            </div>
+
+            <div id="estado-usuario" class="estado-usuario" style="display: none;">
+                <div style="background: linear-gradient(135deg, #d4a574, #b8960f); padding: 15px; border-radius: 8px; color: white; margin-bottom: 20px;">
+                    <p style="margin: 5px 0;"><strong>👤 Usuario:</strong> <span id="nombre-usuario"></span></p>
+                    <p style="margin: 5px 0;"><strong>📧 Correo:</strong> <span id="correo-usuario"></span></p>
+                </div>
+            </div>
+
+            <div id="mensaje-error" class="mensaje-error"></div>
+            <div id="mensaje-exito" class="mensaje-exito"></div>
+
+            <div id="citas-contenedor">
+                <div class="citas-vacio">
+                    <div class="citas-vacio-icon">📋</div>
+                    <p>Cargando citas...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+  
+    <div id="modal-eliminar" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">⚠️ Confirmar Eliminación</div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas eliminar esta cita? Esta acción no se puede deshacer.
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn-modal btn-cancelar-modal" value="Cancelar" onclick="cerrarModal()">
+                <input type="button" class="btn-modal btn-confirmar" value="Sí, Eliminar" onclick="confirmarEliminacion()">
+            </div>
+        </div>
+    </div>
+
+    <script src="src/js/menu.js"></script>
+    <script>
+        let citaAEliminar = null;
+
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            verificarSesionYCargarCitas();
+           //contador
+            setInterval(actualizarContadores, 1000);
+            
+            // Cargar notificaciones
+            cargarNotificaciones();
+            setInterval(cargarNotificaciones, 10000); // Cada 10 segundos
+            
+            // Detectar si volvemos de editar y recargar citas
+            const params = new URLSearchParams(window.location.search);
+            if (params.has('refresh')) {
+                // Limpiar el parámetro de la URL sin recargar la página
+                window.history.replaceState({}, document.title, 'mis-citas.html');
+                // Recargar citas
+                setTimeout(() => {
+                    cargarCitas();
+                }, 100);
+            }
+            
+            // Recargar citas cada 5 segundos para estar sincronizado
+            setInterval(() => {
+                cargarCitas();
+            }, 5000);
+        });
+
+        function verificarSesionYCargarCitas() {
+            fetch('verificar-sesion.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.logueado) {
+                        document.getElementById('nombre-usuario').textContent = data.usuario_nombre;
+                        document.getElementById('correo-usuario').textContent = data.usuario_correo;
+                        document.getElementById('estado-usuario').style.display = 'block';
+                        cargarCitas();
+                    } else {
+                        window.location.href = 'index.html';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error verificando sesión:', error);
+                    window.location.href = 'index.html';
+                });
+        }
+
+        function cargarCitas() {
+            fetch('obtener-citas.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        mostrarCitas(data.citas);
+                    } else {
+                        mostrarError(data.message || 'Error al cargar las citas');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error cargando citas:', error);
+                    mostrarError('Error al conectar con el servidor');
+                });
+        }
+
+        function mostrarCitas(citas) {
+            const contenedor = document.getElementById('citas-contenedor');
+
+            if (citas.length === 0) {
+                contenedor.innerHTML = `
+                    <div class="citas-vacio">
+                        <div class="citas-vacio-icon">📋</div>
+                        <p>No tienes citas agendadas aún</p>
+                        <a href="servicios.html" class="btn-nueva-cita">Agendar una cita</a>
+                    </div>
+                `;
+                return;
+            }
+
+            // Limpiar completamente el contenedor
+            contenedor.innerHTML = '';
+            
+            // Crear grid
+            const grid = document.createElement('div');
+            grid.className = 'citas-grid';
+            
+            citas.forEach(cita => {
+                const elemento = crearTarjetaCita(cita);
+                grid.appendChild(elemento);
+            });
+            
+            contenedor.appendChild(grid);
+        }
+
+        function crearTarjetaCita(cita) {
+            const card = document.createElement('div');
+            card.className = 'cita-card';
+
+            // Parsear la fecha y hora correctamente sin desfase de zona horaria
+            const [year, month, day] = cita.fecha.split('-');
+            const [horas, minutos, segundos] = cita.hora.split(':');
+            const fechaCompleta = new Date(year, parseInt(month) - 1, day, parseInt(horas), parseInt(minutos), parseInt(segundos));
+            const ahora = new Date();
+            const diferencia = fechaCompleta - ahora;
+
+            let status = '';
+            let badgeClass = '';
+
+            if (diferencia < 0) {
+                status = 'Pasada';
+                badgeClass = 'status-pasada';
+            } else if (diferencia < 86400000) { 
+                status = 'Hoy';
+                badgeClass = 'status-hoy';
+            } else {
+                status = 'Próximamente';
+                badgeClass = 'status-proximamente';
+            }
+
+            const countdownHTML = diferencia > 0 ? `
+                <div class="countdown-timer">
+                    <div class="countdown-texto">Falta para tu cita:</div>
+                    <div class="countdown-tiempo" data-timestamp="${fechaCompleta.getTime()}">
+                        Calculando...
+                    </div>
+                </div>
+            ` : '';
+
+            const notasHTML = cita.notas ? `
+                <div class="cita-notas">
+                    📝 <strong>Notas:</strong> ${cita.notas}
+                </div>
+            ` : '';
+
+            card.innerHTML = `
+                <span class="cita-status-badge ${badgeClass}">${status}</span>
+                
+                <div class="cita-fecha">📅 ${formatearFecha(cita.fecha)}</div>
+                <div class="cita-hora">🕐 ${cita.hora}</div>
+
+                ${countdownHTML}
+
+                <div class="cita-info">
+                    <strong>Estilista:</strong>
+                    <span>${cita.estilista}</span>
+                </div>
+
+                <div class="cita-info">
+                    <strong>Teléfono:</strong>
+                    <span>${cita.telefono}</span>
+                </div>
+
+                <div class="cita-servicios">
+                    <strong>Servicios Solicitados:</strong>
+                    <div class="servicios-lista">${cita.servicios}</div>
+                </div>
+
+                <div class="cita-info">
+                    <strong>Tipo:</strong>
+                    <span>${cita.tipo_servicio}</span>
+                </div>
+
+                ${notasHTML}
+
+                <div class="cita-acciones">
+                    <form method="GET" action="editar-cita.php" style="display: inline;">
+                        <input type="hidden" name="id" value="${cita.id}">
+                        <input type="submit" class="btn-accion btn-editar" value="✏️ Editar">
+                    </form>
+                </div>
+            `;
+
+            return card;
+        }
+
+        function formatearFecha(fecha) {
+            // Dividir la fecha en partes (YYYY-MM-DD)
+            const [year, month, day] = fecha.split('-');
+            // Crear la fecha con la zona horaria local sin desfase
+            const fechaObj = new Date(year, parseInt(month) - 1, day);
+            const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            return fechaObj.toLocaleDateString('es-ES', opciones);
+        }
+
+        function actualizarContadores() {
+            const contadores = document.querySelectorAll('.countdown-tiempo');
+            contadores.forEach(contador => {
+                const timestamp = parseInt(contador.dataset.timestamp);
+                const ahora = new Date().getTime();
+                const diferencia = timestamp - ahora;
+
+                if (diferencia > 0) {
+                    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+                    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+                    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+                    contador.textContent = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+                } else {
+                    contador.textContent = 'La cita ha pasado';
+                }
+            });
+        }
+
+        function abrirModalEliminar(citaId) {
+            citaAEliminar = citaId;
+            document.getElementById('modal-eliminar').style.display = 'block';
+        }
+
+        function cerrarModal() {
+            document.getElementById('modal-eliminar').style.display = 'none';
+            citaAEliminar = null;
+        }
+
+        function confirmarEliminacion() {
+            if (!citaAEliminar) return;
+
+            fetch('eliminar-cita.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'id=' + citaAEliminar
+            })
+            .then(response => response.json())
+            .then(data => {
+                cerrarModal();
+                if (data.success) {
+                    mostrarExito('Cita eliminada correctamente');
+                    setTimeout(() => {
+                        cargarCitas();
+                    }, 1000);
+                } else {
+                    mostrarError(data.message || 'Error al eliminar la cita');
+                }
+            })
+            .catch(error => {
+                cerrarModal();
+                console.error('Error:', error);
+                mostrarError('Error al conectar con el servidor');
+            });
+        }
+
+        function mostrarError(mensaje) {
+            const div = document.getElementById('mensaje-error');
+            div.textContent = '❌ ' + mensaje;
+            div.style.display = 'block';
+            setTimeout(() => {
+                div.style.display = 'none';
+            }, 5000);
+        }
+
+        function mostrarExito(mensaje) {
+            const div = document.getElementById('mensaje-exito');
+            div.textContent = '✅ ' + mensaje;
+            div.style.display = 'block';
+            setTimeout(() => {
+                div.style.display = 'none';
+            }, 5000);
+        }
+
+        // Cerrar al hcer click
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal-eliminar');
+            if (event.target === modal) {
+                cerrarModal();
+            }
+            
+            // Cerrar panel de notificaciones
+            const panelNotificaciones = document.getElementById('panel-notificaciones');
+            if (panelNotificaciones && event.target !== document.getElementById('btn-notificaciones')) {
+                if (!panelNotificaciones.contains(event.target) && !event.target.closest('.notificaciones-widget')) {
+                    panelNotificaciones.style.display = 'none';
+                }
+            }
+        }
+
+        // Funciones para notificaciones
+        function toggleNotificaciones() {
+            const panel = document.getElementById('panel-notificaciones');
+            if (panel.style.display === 'block') {
+                panel.style.display = 'none';
+            } else {
+                panel.style.display = 'block';
+                cargarNotificaciones();
+            }
+        }
+
+        function cargarNotificaciones() {
+            fetch('obtener-notificaciones.php?accion=obtener')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        mostrarNotificaciones(data.notificaciones, data.sin_leer);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error cargando notificaciones:', error);
+                });
+        }
+
+        function mostrarNotificaciones(notificaciones, sinLeer) {
+            const lista = document.getElementById('lista-notificaciones');
+            const contador = document.getElementById('contador-notificaciones');
+            
+            // Mostrar contador
+            if (sinLeer > 0) {
+                contador.textContent = sinLeer;
+                contador.style.display = 'flex';
+            } else {
+                contador.style.display = 'none';
+            }
+            
+            // Mostrar notificaciones
+            if (notificaciones.length === 0) {
+                lista.innerHTML = '<p style="text-align: center; color: #999; padding: 20px;">No tienes notificaciones</p>';
+                return;
+            }
+            
+            lista.innerHTML = notificaciones.map(notif => {
+                const claseLeida = notif.leida === 0 ? 'no-leida' : '';
+                const fecha = new Date(notif.fecha_creacion).toLocaleString('es-ES', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                
+                return `
+                    <div class="notificacion-item ${claseLeida}" onclick="marcarComoLeida(${notif.id})">
+                        <span class="notificacion-tipo ${notif.tipo}">${notif.tipo.charAt(0).toUpperCase() + notif.tipo.slice(1)}</span>
+                        <div class="notificacion-mensaje">${notif.mensaje}</div>
+                        <div class="notificacion-fecha">${fecha}</div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function marcarComoLeida(id) {
+            fetch('obtener-notificaciones.php?accion=marcar_leida&id=' + id)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        cargarNotificaciones();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        function marcarTodasLeidas() {
+            fetch('obtener-notificaciones.php?accion=marcar_todas_leidas')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        cargarNotificaciones();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</body>
+</html>

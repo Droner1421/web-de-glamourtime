@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/estilos.css">
+    <link rel="stylesheet" href="src/css/carousel.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
+    <link rel="stylesheet" href="src/css/user-menu.css">
+    <title>Glamour Time</title>
+</head>
+<body>
+ <div class="barra_superior"> 
+    <div class="info-contacto">
+      <a href="tel:123-456-7890" class="contacto-item">
+        <i class="icon">📞</i>
+        <span>123-456-7890</span>
+      </a>
+      <a href="mailto:glamourtim3@gmail.com" class="contacto-item">
+        <i class="icon">📧</i>
+        <span>glamourtim3@gmail.com</span>
+      </a>
+    </div>
+
+ </div>
+
+  <div class="barra_navegacion">
+    <div class="nav-container">
+      <div class="logo-container">
+        <div class="logo-icon">💎</div>
+        <div class="titulo">Glamour Time</div>
+      </div>
+
+      <button class="alternar-menu" onclick="alternarMenu()" onkeydown="if(event.key==='Enter') alternarMenu();" style="border: none; background: none; padding: 0; cursor: pointer;" aria-label="Abrir menú de navegación">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="enlaces-nav">
+        <a href="conocenos.html" class="item-nav">Conocenos</a>
+        <a href="productos.html" class="item-nav">Productos</a>
+        <a href="servicios.html" class="item-nav">Servicios</a>
+        <a href="catalogos/catalogos.html" class="item-nav">Catalogos</a>
+        <a href="mis-citas.html" class="item-nav">Citas</a>
+        <a href="#" class="item-nav usuario abrir-auth">
+          <img class="avatar" src="/src/img/avatar.png" alt="usuario">
+        </a>
+      </nav>
+    </div>
+  </div>
+    
+  <h1 style="position: absolute; left: -10000px; top: -10000px;">Glamour Time - Salón de Belleza</h1>
+  <div class="imagen-principal">
+    <div class="superposicion-principal"></div>
+    <div class="contenido-principal">
+      <div class="texto-principal">
+        <h2 style="color: #FFFFFF;">¡Los mejores<br><span class="resaltado">cambios de look!</span></h2>
+        <p style="color: #454545;">Reserva tu cita y descubre nuestra Magia</p>
+      </div>
+
+      <div class="botones">
+        <a href="productos.html" class="boton boton-outline" >Ver Productos</a>
+        <a href="#reserva" class="boton boton-solid">Agendar Cita</a>
+      </div>
+    </div>
+    <div class="decoracion-principal"></div>
+  </div>
+
+  <section class="servicios seccion" id="servicios">
+      <div class="contenedor">
+        <h2 class="titulo-seccion">Nuestros Servicios</h2>
+        <div class="contenedor-carrusel">
+          <div class="diapositiva desvanecer">
+            <div class="numero-texto">1 de 3</div>
+            <div class="card-servicio" onclick="window.location.href='#reserva';" style="cursor: pointer;">
+              <img src="src/img/Manicura.jpg" alt="Manicura & Pedicura" style="width:100%">
+              <div class="servicio-info">
+                <h4>Manicura & Pedicura</h4>
+                <div class="rating">
+                  <span style="color: #524500;">★★★★★</span>
+                </div>
+                <p>Manicura y todo lo necesario para el cuidado de tus uñas</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="diapositiva desvanecer">
+            <div class="numero-texto">2 de 3</div>
+            <div class="card-servicio" onclick="window.location.href='#reserva';" style="cursor: pointer;">
+              <img src="src/img/Corte.jpg" alt="Corte & Peinado" style="width:100%">
+              <div class="servicio-info">
+                <h4>Corte & Peinado</h4>
+                <div class="rating">
+                  <span style="color: #524500;" >★★★★★</span>
+                </div>
+                <p>Cortes modernos y peinados para cualquier ocasión.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="diapositiva desvanecer">
+            <div class="numero-texto">3 de 3</div>
+            <div class="card-servicio" onclick="window.location.href='#reserva';" style="cursor: pointer;">
+              <img src="src/img/Tintes.jpeg" alt="Tintes & Mechas" style="width:100%">
+              <div class="servicio-info">
+                <h4>Tintes & Mechas</h4>
+                <div class="rating">
+                  <span style="color: #524500;">★★★★★</span>
+                </div>
+                <p>Coloración y mechas con productos de calidad y cuidado del cabello.</p>
+              </div>
+            </div>
+          </div>
+
+          <a class="anterior" onclick="cambiarDiapositiva(-1)" onkeydown="if(event.key==='Enter') cambiarDiapositiva(-1)" role="button" tabindex="0">&#10094;</a>
+          <a class="siguiente" onclick="cambiarDiapositiva(1)" onkeydown="if(event.key==='Enter') cambiarDiapositiva(1)" role="button" tabindex="0">&#10095;</a>
+        </div>
+
+        <div style="text-align:center; margin-top: 20px;">
+          <span class="punto" onclick="irADiapositiva(1)" onkeydown="if(event.key==='Enter') irADiapositiva(1)" role="button" tabindex="0"></span>
+          <span class="punto" onclick="irADiapositiva(2)" onkeydown="if(event.key==='Enter') irADiapositiva(2)" role="button" tabindex="0"></span>
+          <span class="punto" onclick="irADiapositiva(3)" onkeydown="if(event.key==='Enter') irADiapositiva(3)" role="button" tabindex="0"></span>
+        </div>
+
+        <div class="ver-mas" style="text-align: center; margin-top: 20px;">
+          <a href="servicios.html" class="boton">Ver más servicios</a>
+        </div>
+      </div>
+    </section>
+
+ 
+    <section class="nosotros seccion">
+      <div class="contenedor nosotros-grid">
+        <div class="texto-nosotros">
+          <span class="subtitulo">Sobre Nosotros</span>
+          <h3 class="titulo-seccion">Bienvenida a<br><span class="destacado">Glamour Time</span></h3>
+          <p class="descripcion">En Glamour Time nos especializamos en realzar tu belleza natural con servicios personalizados y un equipo profesional altamente capacitado. Cada visita es una experiencia única diseñada para tu bienestar y satisfacción.</p>
+          <div class="estadisticas">
+            <div class="stat">
+              <span class="numero">5+</span>
+              <span class="etiqueta">Años de<br>Experiencia</span>
+            </div>
+            <div class="stat">
+              <span class="numero">1K+</span>
+              <span class="etiqueta">Clientes<br>Satisfechos</span>
+            </div>
+            <div class="stat">
+              <span class="numero">2+</span>
+              <span class="etiqueta">Expertos<br>Estilistas</span>
+            </div>
+          </div>
+          <div class="cta-container">
+            <a href="#reserva" class="boton primario">Reservar ahora</a>
+            <a href="#servicios" class="boton secundario">Ver Servicios</a>
+          </div>
+        </div>
+        <div class="imagen-nosotros">
+          <div class="imagen-overlay"></div>
+          <div class="decoracion-1"></div>
+          <div class="decoracion-2"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  
+    <section id="reserva" class="reserva seccion">
+      <div class="contenedor">
+        <span class="subtitulo">Tu momento de brillar</span>
+        <h3 class="titulo-seccion">Agenda tu Cita</h3>
+        <div id="alerta-sesion" style="display:none; background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 5px; margin-bottom: 20px; text-align: center;">
+          <p style="margin: 0; color: #856404;">Debes <strong><a href="#" class="abrir-auth" style="color: #856404; text-decoration: underline;">iniciar sesión</a></strong> para agendar una cita.</p>
+        </div>
+        <form id="formulario-cita" class="form-cita" autocomplete="off">
+          <div class="campo">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          <div class="campo">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" required>
+          </div>
+          
+          <fieldset class="seleccion-servicios"> 
+            <legend class="etiqueta-servicios">Selecciona los servicios</legend>
+            <div class="grupo-checkbox">
+              <label class="etiqueta-checkbox">
+                <input type="checkbox" id="manicure" name="servicio" value="manicure" aria-label="Manicura & Pedicura">
+                <span class="checkbox-personalizado"></span>
+                <span class="texto-checkbox">Manicura & Pedicura</span>
+              </label>
+              <label class="etiqueta-checkbox">
+                <input type="checkbox" id="corte" name="servicio" value="corte" aria-label="Corte & Peinado">
+                <span class="checkbox-personalizado"></span>
+                <span class="texto-checkbox">Corte & Peinado</span>
+              </label>
+              <label class="etiqueta-checkbox">
+                <input type="checkbox" id="tintes" name="servicio" value="tintes" aria-label="Tintes & Mechas">
+                <span class="checkbox-personalizado"></span>
+                <span class="texto-checkbox">Tintes & Mechas</span>
+              </label>
+              <label class="etiqueta-checkbox">
+                <input type="checkbox" id="faciales" name="servicio" value="faciales" aria-label="Faciales & Tratamientos">
+                <span class="checkbox-personalizado"></span>
+                <span class="texto-checkbox">Faciales & Tratamientos</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div>
+            <label for="estilista">Estilista</label>
+            <select id="estilista" name="estilista" required aria-label="Selecciona estilista">
+              <option value="">Selecciona</option>
+              <option value="ana">Ana Martínez</option>
+              <option value="luis">Luis Fernández</option>
+              <option value="maria">María Gómez</option>
+              <option value="carlos">Carlos Rodríguez</option>
+            </select>
+
+
+          </div>
+
+          <fieldset class="seleccion-edad">  
+            <legend class="etiqueta-edad">Selecciona tipo de servicio</legend>
+            <div class="grupo-radio">
+              <label class="etiqueta-radio">
+                <input type="radio" name="edad" value="adulto" required aria-label="Servicio para Adulto">
+                <span class="radio-personalizado"></span>
+                <span class="texto-radio">Adulto</span>
+              </label>
+              <label class="etiqueta-radio">
+                <input type="radio" name="edad" value="nino" required aria-label="Servicio para Niño">
+                <span class="radio-personalizado"></span>
+                <span class="texto-radio">Niño</span>
+              </label>          
+            </div>
+          </fieldset>
+          
+          <div class="campo doble">
+            <div>
+              <label for="fecha">Fecha</label>
+              <input type="date" id="fecha" name="fecha" required aria-label="Selecciona fecha de cita">
+            </div>
+
+            <div>
+              <label for="hora">Hora</label>
+              <select id="hora" name="hora" required aria-label="Selecciona hora de cita">
+                <option value="">Selecciona una hora</option>
+                <option value="10:00:00">10:00</option>
+                <option value="11:00:00">11:00</option>
+                <option value="12:00:00">12:00</option>
+                <option value="13:00:00">13:00</option>
+                <option value="14:00:00">14:00</option>
+                <option value="15:00:00">15:00</option>
+                <option value="16:00:00">16:00</option>
+                <option value="17:00:00">17:00</option>
+                <option value="18:00:00">18:00</option>
+              </select>
+            </div>
+
+          </div>
+          <div class="campo">
+            <label for="notas">Notas</label>
+            <textarea id="notas" name="notas" rows="3" placeholder="Peticiones especiales"></textarea>
+          </div>
+
+          <div class="acciones">
+            <input type="submit" class="boton primario" value="Confirmar cita">
+            <input type="reset" class="boton secundario" value="Limpiar">
+          </div>
+        </form>
+      </div>
+    </section>
+
+    
+    <section class="info seccion">
+      <div class="contenedor">
+        <h3 class="titulo-seccion">Más sobre nosotros</h3>
+        <p>Glamour Time es un espacio dedicado a tu cuidado y belleza. Nuestro personal está capacitado y utilizamos productos de primera calidad. Ofrecemos paquetes personalizados, promociones por temporada y asesoría gratuita en estética.</p>
+
+        <h4>Promociones actuales</h4>
+        <ul>
+          <li>10% de descuento en servicios de color los martes.</li>
+          <li>Combo manicura + pedicura al 20% los fines de semana.</li>
+          <li>Primer facial con diagnóstico gratuito.</li>
+        </ul>
+
+        <h4>Formas de pago</h4>
+        <p>Aceptamos efectivo, tarjetas y pagos con transferencia. También ofrecemos planes de pago para paquetes grandes.</p>
+      </div>
+    </section>
+
+ 
+    <section class="resenas seccion">
+      <div class="contenedor">
+        <span class="subtitulo">Testimonios</span>
+        <h3 class="titulo-seccion">Lo que dicen nuestros clientes</h3>
+        
+        <div class="resenas-slider">
+          <div class="resena-card">
+            <div class="resena-imagen">
+              <img src="src/img/clientes/cliente1.jpg" alt="María García, cliente de servicio de coloración">
+            </div>
+            <div class="resena-contenido">
+              <div class="resena-rating">★★★★★</div>
+              <p class="resena-texto">"¡Increíble servicio! Mi cabello nunca se había visto mejor. El equipo es muy profesional y el ambiente es muy acogedor. Los tintes que utilizan son de primera calidad."</p>
+              <div class="resena-autor">
+                <strong>María García</strong>
+                <p class="resena-texto">Servicio de Coloración</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="resena-card">
+            <div class="resena-imagen">
+              <img src="src/img/clientes/cliente2.jpg" alt="Ana Martínez, cliente de manicura y pedicura">
+            </div>
+            <div class="resena-contenido">
+              <div class="resena-rating">★★★★★</div>
+              <p class="resena-texto">"Las manicuras son perfectas y duran muchísimo. El personal es muy amable y siempre logran exactamente lo que quiero. Los diseños son únicos."</p>
+              <div class="resena-autor">
+                <strong>Ana Martínez</strong>
+                <p class="resena-texto">Manicura & Pedicura</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="resena-card">
+            <div class="resena-imagen">
+              <img src="src/img/clientes/cliente3.jpg" alt="Laura Sánchez, cliente de tratamiento facial">
+            </div>
+            <div class="resena-contenido">
+              <div class="resena-rating">★★★★★</div>
+              <p class="resena-texto">"Los tratamientos faciales son increíbles. Mi piel se ve radiante y el servicio es de primera calidad. La limpieza profunda fue justo lo que necesitaba."</p>
+              <div class="resena-autor">
+                <strong>Laura Sánchez</strong>
+                <p class="resena-texto">Tratamiento Facial</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="resena-card">
+            <div class="resena-imagen">
+              <img src="src/img/clientes/cliente4.jpg" alt="Carolina Ruiz, cliente de corte y peinado">
+            </div>
+            <div class="resena-contenido">
+              <div class="resena-rating">★★★★★</div>
+              <p class="resena-texto">"El corte de cabello fue exactamente lo que pedí. La estilista supo interpretar perfectamente el estilo que buscaba. ¡Súper recomendado!"</p>
+              <div class="resena-autor">
+                <strong>Carolina Ruiz</strong>
+                <p class="resena-texto">Corte & Peinado</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="resena-card">
+            <div class="resena-imagen">
+              <img src="src/img/clientes/cliente5.jpg" alt="Patricia López, cliente de mechas y balayage">
+            </div>
+            <div class="resena-contenido">
+              <div class="resena-rating">★★★★★</div>
+              <p class="resena-texto">"Las mechas quedaron espectaculares. El proceso fue muy profesional y me explicaron cada paso. El resultado superó mis expectativas."</p>
+              <div class="resena-autor">
+                <strong>Patricia López</strong>
+                <p class="resena-texto">Mechas & Balayage</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="resena-card">
+            <div class="resena-imagen">
+              <img src="src/img/clientes/cliente6.jpg" alt="Diana Torres, cliente de masaje facial">
+            </div>
+            <div class="resena-contenido">
+              <div class="resena-rating">★★★★★</div>
+              <p class="resena-texto">"El masaje facial fue relajante y rejuvenecedor. Los productos que usan son de excelente calidad. Mi piel quedó suave e hidratada."</p>
+              <div class="resena-autor">
+                <strong>Diana Torres</strong>
+                <p class="resena-texto">Masaje Facial</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="resena-card">
+            <div class="resena-imagen">
+              <img src="src/img/clientes/cliente7.jpg" alt="Elena Morales, cliente de peinado de novia">
+            </div>
+            <div class="resena-contenido">
+              <div class="resena-rating">★★★★★</div>
+              <p class="resena-texto">"El peinado para mi boda fue perfecto. Se mantuve intacto toda la celebración. El maquillaje también fue espectacular."</p>
+              <div class="resena-autor">
+                <strong>Elena Morales</strong>
+                <p class="resena-texto">Peinado de Novia</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="resena-card">
+            <div class="resena-imagen">
+              <img src="src/img/clientes/cliente8.jpg" alt="Sofía Vega, cliente de tratamiento de keratina">
+            </div>
+            <div class="resena-contenido">
+              <div class="resena-rating">★★★★★</div>
+              <p class="resena-texto">"El tratamiento de keratina dejó mi cabello increíblemente suave y manejable. El resultado duró varios meses. ¡Excelente servicio!"</p>
+              <div class="resena-autor">
+                <strong>Sofía Vega</strong>
+                <p class="resena-texto">Tratamiento Keratina</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="pie-pagina">
+      <div class="contenedor grid-pie">
+        <div class="columna-pie">
+          <h4>Contacto</h4>
+          <p>Tel: 123-456-7890<br>Correo: glamourtim3@gmail.com</p>
+          <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+        </div>
+        <div class="columna-pie">
+          <h4>Horario</h4>
+          <p>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 15:00<br>Dom: Cerrado</p>
+        </div>
+        <div class="columna-pie">
+          <h4>Síguenos</h4>
+          <p><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">WhatsApp</a></p>
+        </div>
+      </div>
+      <div class="contenedor">
+        <p class="copyright">© <span id="year">2025</span> Glamour Time. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  
+
+
+
+<script>
+let indiceDiapositiva = 1;
+let intervaloDiapositiva;
+
+function iniciarRotacion() {
+  intervaloDiapositiva = setInterval(function() {
+    cambiarDiapositiva(1);
+  }, 5000);
+}
+
+function detenerRotacion() {
+  clearInterval(intervaloDiapositiva);
+}
+
+function cambiarDiapositiva(n) {
+  mostrarDiapositiva(indiceDiapositiva += n);
+}
+
+function irADiapositiva(n) {
+  mostrarDiapositiva(indiceDiapositiva = n);
+}
+
+function mostrarDiapositiva(n) {
+  let i;
+  let slides = document.getElementsByClassName("diapositiva");
+  let puntos = document.getElementsByClassName("punto");
+
+  if (n > slides.length) { indiceDiapositiva = 1; }
+  if (n < 1) { indiceDiapositiva = slides.length; }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  for (i = 0; i < puntos.length; i++) {
+    puntos[i].className = puntos[i].className.replace(" active", "");
+  }
+
+  slides[indiceDiapositiva-1].style.display = "block";
+  puntos[indiceDiapositiva-1].className += " active";
+}
+
+// Mostrar mensajes de sesión
+document.addEventListener('DOMContentLoaded', function() {
+  mostrarDiapositiva(indiceDiapositiva);
+  iniciarRotacion();
+
+  let container = document.querySelector('.contenedor-carrusel');
+  container.addEventListener('mouseenter', detenerRotacion);
+  container.addEventListener('mouseleave', iniciarRotacion);
+  container.addEventListener('touchstart', detenerRotacion);
+  container.addEventListener('touchend', iniciarRotacion);
+
+  // Mostrar alertas de error/éxito si existen
+  const urlParams = new URLSearchParams(window.location.search);
+  
+  // Buscar en la sesión del servidor (esto se puede hacer con fetch)
+  fetch('obtener-mensajes.php')
+    .then(response => response.json())
+    .then(data => {
+      if (data.error) {
+        alert('❌ ' + data.error);
+        window.location.hash = '#reserva';
+      }
+      if (data.exito) {
+        alert('✅ ' + data.exito);
+        window.location.hash = '#reserva';
+      }
+    })
+    .catch(error => console.log('No hay mensajes'));
+});
+</script>
+    <script src="src/js/menu.js"></script>
+    <script src="src/js/sesion.js"></script>
+    <script src="src/js/auth-modal.js"></script>
+    <script src="src/js/citas.js"></script>
+</body>
+</html>

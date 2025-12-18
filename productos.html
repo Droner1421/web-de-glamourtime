@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/estilos.css">
+    <link rel="stylesheet" href="src/css/productos.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
+    <link rel="stylesheet" href="src/css/user-menu.css">
+    <title>Productos - Glamour Time</title>
+</head>
+<body>
+    <div class="barra_superior"> 
+        <div class="info-contacto">
+            <a href="tel:123-456-7890" class="contacto-item">
+                <i class="icon">📞</i>
+                <span>123-456-7890</span>
+            </a>
+            <a href="mailto:glamourtim3@gmail.com" class="contacto-item">
+                <i class="icon">📧</i>
+                <span>glamourtim3@gmail.com</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="barra_navegacion">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon">💎</div>
+                <div class="titulo">Glamour Time</div>
+            </div>
+            <div class="alternar-menu" onclick="alternarMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="enlaces-nav">
+                <a href="index.html" class="item-nav">Inicio</a>
+                <a href="conocenos.html" class="item-nav">Conócenos</a>
+                <a href="productos.html" class="item-nav active">Productos</a>
+                <a href="servicios.html" class="item-nav">Servicios</a>
+                <a href="#" class="item-nav usuario abrir-auth">
+                    <img class="avatar" src="/src/img/avatar.png" alt="usuario">
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="productos-main">
+        <section class="hero-productos">
+            <h1>Nuestros Productos</h1>
+            <p class="subtitulo">Calidad profesional para tu cuidado diario</p>
+        </section>
+
+        <section class="categorias-productos">
+            <div class="contenedor">
+                <h2>Categorías</h2>
+                <div class="filtros">
+                    <input type="button" class="filtro-btn active" data-categoria="todos" value="Todos">
+                    <input type="button" class="filtro-btn" data-categoria="cabello" value="Cabello">
+                    <input type="button" class="filtro-btn" data-categoria="unas" value="Uñas">
+                    <input type="button" class="filtro-btn" data-categoria="facial" value="Facial">
+                    <input type="button" class="filtro-btn" data-categoria="maquillaje" value="Maquillaje">
+                </div>
+            </div>
+        </section>
+
+        <section class="catalogo">
+            <div class="contenedor">
+                <div class="productos-grid">
+                    <!-- Los productos se cargarán dinámicamente aquí -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="contenedor grid-pie">
+            <div class="columna-pie">
+                <h4>Contacto</h4>
+                <p>Tel: 123-456-7890<br>Correo: glamourtim3@gmail.com</p>
+                <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Horario</h4>
+                <p>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 15:00<br>Dom: Cerrado</p>
+            </div>
+            <div class="columna-pie">
+                <h4>Síguenos</h4>
+                <p><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">WhatsApp</a></p>
+            </div>
+        </div>
+        <div class="contenedor">
+            <p class="copyright">© <span id="year">2025</span> Glamour Time. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="src/js/menu.js"></script>
+    <script src="src/js/sesion.js"></script>
+    <script src="src/js/auth-modal.js"></script>
+    <script src="src/js/productos.js"></script>
+</body>
+</html>

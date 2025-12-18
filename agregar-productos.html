@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Agregar Producto - Glamour Time Admin</title>
+    <script>
+        // Verificar si el usuario es admin
+        async function verificarAdmin() {
+            try {
+                const response = await fetch('verificar-sesion.php');
+                const data = await response.json();
+                
+                if (!data.logueado || !data.es_admin) {
+                    // No es admin o no está logueado, redirigir a index
+                    window.location.href = 'index.html';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                window.location.href = 'index.html';
+            }
+        }
+        
+        // Ejecutar verificación cuando carga la página
+        verificarAdmin();
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+            min-height: 100vh;
+            font-family: 'Montserrat', sans-serif;
+            color: #ccc;
+        }
+
+        .barra_superior {
+            background: #1a1a2e;
+            padding: 0.8rem 1rem;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .info-contacto {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .contacto-item {
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .contacto-item:hover {
+            color: #ffd700;
+        }
+
+        .barra_navegacion {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 1rem;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .logo-icon {
+            font-size: 1.5rem;
+        }
+
+        .titulo {
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .enlaces-nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .item-nav {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        .item-nav:hover {
+            color: #d4af37;
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        main {
+            padding: 3rem 1rem;
+            min-height: calc(100vh - 400px);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .form-card {
+            background: #1c1c1c;
+            border-radius: 12px;
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.15);
+            overflow: hidden;
+            animation: slideUp 0.5s ease;
+            border: 1px solid #333;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-header {
+            background: linear-gradient(135deg, #d4af37 0%, #c49d2e 100%);
+            padding: 2.5rem;
+            text-align: center;
+            border-bottom: 4px solid #b08a1f;
+        }
+
+        .form-header h1 {
+            font-family: 'Playfair Display', serif;
+            color: white;
+            font-size: 2.2rem;
+            margin: 0;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        .form-body {
+            padding: 2.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: #ffd900;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .required {
+            color: #e74c3c;
+            font-size: 1.2rem;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select,
+        input[type="file"] {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #333;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            background: #2a2a2a;
+            color: #ccc;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+            line-height: 1.5;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        select:focus,
+        input[type="file"]:focus {
+            outline: none;
+            border-color: #ffd900;
+            box-shadow: 0 0 0 4px rgba(255, 217, 0, 0.15);
+            background: #333;
+        }
+
+        .upload-zone {
+            border: 3px dashed #ffd900;
+            border-radius: 10px;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 217, 0, 0.05) 0%, rgba(255, 217, 0, 0.02) 100%);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .upload-zone:hover {
+            background: linear-gradient(135deg, rgba(255, 217, 0, 0.1) 0%, rgba(255, 217, 0, 0.05) 100%);
+            border-color: #ffed4e;
+        }
+
+        .upload-zone.dragover {
+            background: linear-gradient(135deg, rgba(255, 217, 0, 0.15) 0%, rgba(255, 217, 0, 0.1) 100%);
+            border-color: #ffed4e;
+            transform: scale(1.02);
+        }
+
+        .upload-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .upload-text {
+            color: #ffd900;
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin: 0.5rem 0;
+        }
+
+        .upload-hint {
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .image-preview {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .image-preview img {
+            max-width: 300px;
+            max-height: 300px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(255, 217, 0, 0.3);
+            border: 3px solid #ffd900;
+        }
+
+        .preview-remove {
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .preview-remove:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, #d4af37 0%, #c49d2e 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            margin-top: 1rem;
+        }
+
+        .btn-submit:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .alert {
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            animation: slideDown 0.3s ease;
+            display: none;
+        }
+
+        .alert.show {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .alert-success {
+            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+            color: white;
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+        }
+
+        .alert-error {
+            background: linear-gradient(135deg, #f44336 0%, #da190b 100%);
+            color: white;
+            box-shadow: 0 6px 20px rgba(244, 67, 54, 0.3);
+        }
+
+        .alert-icon {
+            font-size: 1.5rem;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .alert-content {
+            flex: 1;
+        }
+
+        .alert-list {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .alert-list li {
+            margin: 0.5rem 0;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #333;
+        }
+
+        .back-link a {
+            color: #ffd900;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .back-link a:hover {
+            color: #ffed4e;
+            gap: 1rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 2px solid #d4af37;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section h4 {
+            color: #d4af37;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-section p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            padding-top: 1rem;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .enlaces-nav {
+                gap: 1rem;
+            }
+
+            .form-header h1 {
+                font-size: 1.5rem;
+            }
+
+            main {
+                padding: 1.5rem 1rem;
+            }
+
+            .form-body {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+     
+</head>
+<body>
+    <!-- Barra Superior -->
+    <div class="barra_superior">
+        <div class="info-contacto">
+            <a href="tel:123-456-7890" class="contacto-item">📞 123-456-7890</a>
+            <a href="mailto:glamourtim3@gmail.com" class="contacto-item">📧 glamourtim3@gmail.com</a>
+        </div>
+    </div>
+
+    <!-- Barra de Navegación -->
+    <div class="barra_navegacion">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon">💎</div>
+                <div class="titulo">Glamour Time Admin</div>
+            </div>
+            <nav class="enlaces-nav">
+                <a href="admin.html" class="item-nav">← Volver</a>
+                <a href="logout.php" class="item-nav">Cerrar Sesión</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main>
+        <div class="form-card">
+            <!-- Encabezado del Formulario -->
+            <div class="form-header">
+                <h1>✨ Agregar Nuevo Producto</h1>
+                <p>Completa todos los campos para agregar un nuevo producto al catálogo</p>
+            </div>
+
+            <!-- Cuerpo del Formulario -->
+            <div class="form-body">
+                <!-- Alertas -->
+                <div id="alert-container"></div>
+
+                <!-- Formulario -->
+                <form id="formulario-producto" enctype="multipart/form-data">
+                    <!-- Nombre y Precio -->
+                    <div class="two-column">
+                        <div class="form-group">
+                            <label for="nombre_producto">
+                                Nombre del Producto
+                                <span class="required">*</span>
+                            </label>
+                            <input type="text" id="nombre_producto" name="nombre_producto" 
+                                   placeholder="Ej: Tratamiento Capilar Premium" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="precio">
+                                Precio ($)
+                                <span class="required">*</span>
+                            </label>
+                            <input type="number" id="precio" name="precio" step="0.01" min="0" 
+                                   placeholder="0.00" required>
+                        </div>
+                    </div>
+
+                    <!-- Categoría -->
+                    <div class="form-group">
+                        <label for="categoria">
+                            Categoría
+                            <span class="required">*</span>
+                        </label>
+                        <select id="categoria" name="categoria" required>
+                            <option value="">👇 Selecciona una categoría</option>
+                            <option value="cabello">💇 Cabello</option>
+                            <option value="unas">💅 Uñas</option>
+                            <option value="facial">✨ Facial</option>
+                            <option value="maquillaje">💄 Maquillaje</option>
+                        </select>
+                    </div>
+
+                    <!-- Descripción -->
+                    <div class="form-group">
+                        <label for="descripcion">
+                            Descripción
+                            <span class="required">*</span>
+                        </label>
+                        <textarea id="descripcion" name="descripcion" 
+                                  placeholder="Describe los beneficios y características del producto..." required></textarea>
+                    </div>
+
+                    <!-- Imagen -->
+                    <div class="form-group">
+                        <label for="imagen">
+                            Imagen del Producto
+                            <span class="required">*</span>
+                        </label>
+                        <div class="upload-zone" id="upload-zone">
+                            <div class="upload-icon">📸</div>
+                            <div class="upload-text">Arrastra la imagen aquí o haz clic</div>
+                            <div class="upload-hint">JPG, PNG, GIF, WebP (máx 5MB)</div>
+                        </div>
+                        <input type="file" id="imagen" name="imagen" accept="image/*" required style="display: none;">
+                        <div class="image-preview" id="preview-container"></div>
+                    </div>
+
+                    <!-- Botón Submit -->
+                    <button type="submit" class="btn-submit" id="btn-submit">
+                        ✨ Agregar Producto
+                    </button>
+                </form>
+
+                <!-- Enlace Volver -->
+                <div class="back-link">
+                    <a href="admin.html">← Volver al Panel Admin</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>Tel: 123-456-7890<br>Correo: glamourtim3@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Horario</h4>
+                <p>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 15:00<br>Dom: Cerrado</p>
+            </div>
+        </div>
+        <p class="copyright">© <span id="year">2025</span> Glamour Time. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Variables
+        const uploadZone = document.getElementById('upload-zone');
+        const fileInput = document.getElementById('imagen');
+        const form = document.getElementById('formulario-producto');
+        const alertContainer = document.getElementById('alert-container');
+        const btnSubmit = document.getElementById('btn-submit');
+
+        // Funciones de Utilidad
+        function showAlert(type, message, details = null) {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert ${type === 'success' ? 'alert-success' : 'alert-error'} show`;
+            
+            const icon = type === 'success' ? '✓' : '✕';
+            let content = `<div class="alert-icon">${icon}</div><div class="alert-content">${message}`;
+            
+            if (details && Array.isArray(details)) {
+                content += '<ul class="alert-list">' + 
+                          details.map(d => `<li>${d}</li>`).join('') + 
+                          '</ul>';
+            }
+            
+            content += '</div>';
+            alertDiv.innerHTML = content;
+            alertContainer.innerHTML = '';
+            alertContainer.appendChild(alertDiv);
+            alertContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Drag & Drop
+        uploadZone.addEventListener('click', () => fileInput.click());
+
+        uploadZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadZone.classList.add('dragover');
+        });
+
+        uploadZone.addEventListener('dragleave', () => {
+            uploadZone.classList.remove('dragover');
+        });
+
+        uploadZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadZone.classList.remove('dragover');
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                displayPreview(files[0]);
+            }
+        });
+
+        // Preview de Imagen
+        function displayPreview(file) {
+            const previewContainer = document.getElementById('preview-container');
+            previewContainer.innerHTML = '';
+
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const img = document.createElement('img');
+                    img.src = event.target.result;
+                    
+                    const removeBtn = document.createElement('button');
+                    removeBtn.type = 'button';
+                    removeBtn.className = 'preview-remove';
+                    removeBtn.textContent = 'Quitar Imagen';
+                    removeBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        fileInput.value = '';
+                        previewContainer.innerHTML = '';
+                    });
+                    
+                    previewContainer.appendChild(img);
+                    previewContainer.appendChild(removeBtn);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        fileInput.addEventListener('change', function(e) {
+            if (e.target.files.length > 0) {
+                displayPreview(e.target.files[0]);
+            }
+        });
+
+        // Submit del Formulario
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            btnSubmit.disabled = true;
+            btnSubmit.textContent = '⏳ Procesando...';
+            alertContainer.innerHTML = '';
+
+            try {
+                const response = await fetch('agregar-productos.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showAlert('success', data.mensaje);
+                    form.reset();
+                    document.getElementById('preview-container').innerHTML = '';
+                    
+                    setTimeout(() => {
+                        window.location.href = 'admin.html';
+                    }, 2000);
+                } else {
+                    if (data.errores && Array.isArray(data.errores)) {
+                        showAlert('error', 'Error al agregar el producto:', data.errores);
+                    } else {
+                        showAlert('error', data.error || 'Error al agregar el producto');
+                    }
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showAlert('error', 'Error al procesar la solicitud');
+            } finally {
+                btnSubmit.disabled = false;
+                btnSubmit.textContent = '✨ Agregar Producto';
+            }
+        });
+
+        // Actualizar año en footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

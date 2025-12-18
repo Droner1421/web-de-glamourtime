@@ -1,0 +1,106 @@
+.contenedor-carrusel {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  padding: 0 40px;
+}
+
+.diapositiva {
+  display: none;
+  padding: 20px;
+}
+
+.diapositiva:first-child {
+  display: block;
+}
+
+.numero-texto {
+  color: #333333;
+  font-size: 14px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.anterior, .siguiente {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: #333333;
+  font-weight: bold;
+  font-size: 24px;
+  transition: 0.6s ease;
+  border-radius: 50%;
+  user-select: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.siguiente {
+  right: 0;
+}
+
+.anterior {
+  left: 0;
+}
+
+.anterior:hover, .siguiente:hover {
+  background-color: #d4af37;
+  color: white;
+}
+
+.punto {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #666666;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.active, .punto:hover {
+  background-color: #d4af37;
+}
+
+.desvanecer {
+  animation-name: fade;
+  animation-duration: 0.8s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 768px) {
+  .contenedor-carrusel {
+    padding: 0 20px;
+  }
+  
+  .anterior, .siguiente {
+    padding: 8px;
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .numero-texto {
+    font-size: 12px;
+    right: 30px;
+  }
+}
